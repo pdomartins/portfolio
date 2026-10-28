@@ -41,6 +41,9 @@ const aboutCurrent = pathname === "/about";
       <a href="/about" aria-current={aboutCurrent ? "page" : undefined}>About</a>
     </nav>
     <div class="bar-tools">
+      <button class="language-toggle" type="button" data-language-toggle aria-label="Change language">
+        <span data-language-label>PT</span>
+      </button>
       <ThemeToggle />
       <button
         class="menu-button"
@@ -95,4 +98,97 @@ const aboutCurrent = pathname === "/about";
   window.matchMedia("(min-width: 40.01rem)").addEventListener("change", (event) => {
     if (event.matches) setMenu(false);
   });
+
+  const translations: Record<string, string> = {
+    "Work": "Trabalho",
+    "About": "Sobre",
+    "Menu": "Menu",
+    "Close": "Fechar",
+    "Selected work": "Trabalhos selecionados",
+    "Let’s work on something complex.": "Vamos trabalhar em algo complexo.",
+    "For collaborations and new work, reach out through the links below.": "Para colaborações e novos projetos, entre em contato pelos links abaixo.",
+    "Open to select collaborations": "Disponível para colaborações selecionadas",
+    "About": "Sobre",
+    "Experience": "Experiência",
+    "Education & Learning": "Formação e aprendizado",
+    "Degrees": "Graduação e pós-graduação",
+    "Courses": "Cursos",
+    "Areas of Practice": "Áreas de atuação",
+    "Recognition": "Reconhecimentos",
+    "Have a complex problem to solve?": "Você tem um problema complexo para resolver?",
+    "I’m always interested in thoughtful conversations about digital products, design strategy, and emerging technology.": "Tenho interesse em conversas sobre produtos digitais, estratégia de design e tecnologias emergentes.",
+    "Case study in preparation. This page is ready for the narrative, the decisions, and the visuals.": "Estudo de caso em preparação. Esta página está pronta para receber a narrativa, as decisões e os visuais.",
+    "This section will describe the context and the challenge.": "Esta seção apresentará o contexto e o desafio.",
+    "This section will describe the approach and the process.": "Esta seção apresentará a abordagem e o processo.",
+    "This section will describe the key design decisions.": "Esta seção apresentará as principais decisões de design.",
+    "Project visuals will be placed here.": "Os visuais do projeto serão inseridos aqui.",
+    "This section will describe outcomes and learnings.": "Esta seção apresentará os resultados e aprendizados.",
+    "AI-powered commerce platform": "Plataforma de comércio com inteligência artificial",
+    "Fintech product experiences": "Experiências digitais para fintech",
+    "Banking app redesign": "Redesign de aplicativo bancário",
+    "Employee onboarding experience": "Experiência de integração de colaboradores",
+    "Design system": "Sistema de design",
+    "Sustainability strategy": "Estratégia de sustentabilidade",
+    "Experimental mobility concept": "Conceito experimental de mobilidade",
+    "Senior Product Designer": "Senior Product Designer",
+    "Turning complexity into meaningful digital experiences.": "Transformando complexidade em experiências digitais significativas.",
+    "I turn complex products, services, and systems into experiences people can understand and use.": "Transformo produtos, serviços e sistemas complexos em experiências que as pessoas conseguem entender e usar.",
+    "I’m Pedro Martins, a Senior Product Designer with 9+ years of experience across digital products, enterprise SaaS, fintech, e-commerce, and strategic innovation.": "Sou Pedro Martins, Senior Product Designer com mais de 9 anos de experiência em produtos digitais, SaaS corporativo, fintech, e-commerce e inovação estratégica.",
+    "I work across the full product design lifecycle — from discovery and strategic framing to interaction design, prototyping, and delivery. My focus is making complex systems clearer, more useful, and more meaningful for the people who depend on them.": "Atuo em todo o ciclo de design de produto — da descoberta e definição estratégica ao design de interação, prototipação e entrega. Meu foco é tornar sistemas complexos mais claros, úteis e significativos para as pessoas que dependem deles.",
+    "My background combines digital product design with industrial design, strategic design, and innovation. It helps me move between details and systems — from individual interactions to broader services, operating models, and business ecosystems.": "Minha experiência combina design de produtos digitais, design industrial, design estratégico e inovação. Isso me ajuda a transitar entre detalhes e sistemas — de interações individuais a serviços, modelos operacionais e ecossistemas de negócio.",
+    "I connect strategy, design, and technology to create digital products that make complex things feel simple.": "Conecto estratégia, design e tecnologia para criar produtos digitais que tornam o complexo mais simples.",
+    "Skip to content": "Ir para o conteúdo",
+    "Page not found": "Página não encontrada",
+    "Back to the work": "Voltar aos trabalhos",
+  };
+
+  const originalText = new WeakMap<Text, string>();
+
+  function setLanguage(language: "en" | "pt") {
+    document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
+    document.documentElement.dataset.language = language;
+    document.querySelectorAll<HTMLElement>("[data-language-label]").forEach((item) => {
+      item.textContent = language === "pt" ? "EN" : "PT";
+    });
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const nodes: Text[] = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode as Text);
+    nodes.forEach((node) => {
+      if (!originalText.has(node)) originalText.set(node, node.textContent || "");
+      const source = originalText.get(node) || "";
+      const original = source.trim();
+      if (!original) return;
+      const translated = translations[original];
+      if (translated) node.textContent = language === "pt" ? source.replace(original, translated) : source;
+    });
+    try { localStorage.setItem("language", language); } catch (error) {}
+  }
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof Element) || !target.closest("[data-language-toggle]")) return;
+    setLanguage(document.documentElement.dataset.language === "pt" ? "en" : "pt");
+  });
+
+  try {
+    if (localStorage.getItem("language") === "pt") setLanguage("pt");
+  } catch (error) {}
 </script>
+
+<style>
+  .language-toggle {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--fg-muted);
+    font: inherit;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+  }
+
+  .language-toggle:hover,
+  .language-toggle:focus-visible {
+    color: var(--fg);
+  }
+</style>
