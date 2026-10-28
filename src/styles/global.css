@@ -289,15 +289,46 @@ p {
 /* Hero and sections */
 
 .hero {
-  padding-block: var(--space-7) var(--space-8);
+  position: relative;
+  padding-block: var(--space-8) var(--space-9);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -8rem;
+  width: min(42vw, 34rem);
+  height: min(42vw, 34rem);
+  border: 1px solid color-mix(in srgb, var(--mark) 28%, var(--line));
+  border-radius: 50%;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  gap: var(--space-8);
+  align-items: end;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-eyebrow {
   margin-bottom: var(--space-5);
 }
 
+.hero-eyebrow span {
+  color: var(--fg);
+  opacity: 0.55;
+}
+
 .hero-title {
-  max-width: min(11.5em, 100%);
+  max-width: 10.5em;
   font-family: var(--font-serif);
   font-size: var(--text-display);
   font-weight: 450;
@@ -305,6 +336,15 @@ p {
   letter-spacing: -0.04em;
   line-height: 0.98;
   overflow-wrap: break-word;
+}
+
+.hero-lead {
+  max-width: 27rem;
+  margin-top: var(--space-5);
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 2.1vw, 2rem);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
 }
 
 .hero-footer {
@@ -337,6 +377,97 @@ p {
   border-radius: 50%;
   background: var(--mark);
   box-shadow: 0 0 0 0.28rem color-mix(in srgb, var(--mark) 18%, transparent);
+}
+
+.hero-card {
+  position: relative;
+  z-index: 1;
+  min-height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--bg-elevated) 78%, transparent);
+}
+
+.hero-card-top {
+  display: flex;
+  justify-content: space-between;
+  color: var(--fg-muted);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+.hero-orbit {
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+  margin: auto;
+  border: 1px solid color-mix(in srgb, var(--mark) 50%, var(--line));
+  border-radius: 50%;
+}
+
+.hero-orbit::before,
+.hero-orbit::after {
+  content: "";
+  position: absolute;
+  inset: 18%;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+}
+
+.hero-orbit::after {
+  inset: 39%;
+  background: var(--mark);
+  border: 0;
+  box-shadow: 0 0 0 0.55rem color-mix(in srgb, var(--mark) 14%, transparent);
+}
+
+.hero-orbit span {
+  position: absolute;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--fg);
+}
+
+.hero-orbit span:nth-child(1) { top: 12%; left: 48%; }
+.hero-orbit span:nth-child(2) { right: 13%; bottom: 27%; background: var(--mark); }
+.hero-orbit span:nth-child(3) { bottom: 18%; left: 20%; }
+
+.hero-orbit b {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  color: var(--bg);
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.hero-focus-list {
+  display: grid;
+  gap: 0.55rem;
+  list-style: none;
+  padding: 0;
+  font-size: var(--text-sm);
+}
+
+.hero-focus-list li {
+  display: flex;
+  gap: 0.7rem;
+  align-items: baseline;
+  border-top: 1px solid var(--line);
+  padding-top: 0.5rem;
+}
+
+.hero-focus-list span {
+  color: var(--fg-muted);
+  font-size: var(--text-xs);
 }
 
 .section {
@@ -801,6 +932,11 @@ p {
 @media (min-width: 48rem) {
   .hero {
     padding-block: var(--space-9) var(--space-8);
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem);
+    column-gap: clamp(2rem, 7vw, 8rem);
   }
 
   .project-grid {

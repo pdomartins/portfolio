@@ -23,18 +23,32 @@ if (Astro.site) jsonLd.url = Astro.site.href;
 <BaseLayout title={site.name} description={site.description} jsonLd={jsonLd}>
   <PageContainer>
     <section class="hero" aria-labelledby="hero-title">
-      <p class="eyebrow hero-eyebrow">{site.role}</p>
-      <h1 id="hero-title" class="hero-title">Turning complexity into meaningful digital experiences.</h1>
-      <div class="hero-footer">
-        <p class="hero-support">{site.description}</p>
-        {
-          site.availability.visible && site.availability.label && (
-            <p class="availability">
-              <span class="availability-mark" aria-hidden="true"></span>
-              <span>{site.availability.label}</span>
-            </p>
-          )
-        }
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow hero-eyebrow">{site.role} <span>· São Paulo / Worldwide</span></p>
+          <h1 id="hero-title" class="hero-title">I design digital products that move businesses forward.</h1>
+          <p class="hero-lead">Strategy, UX/UI, and AI for complex products, services, and systems.</p>
+          <div class="hero-footer">
+            <p class="hero-support">{site.description}</p>
+            {
+              site.availability.visible && site.availability.label && (
+                <p class="availability">
+                  <span class="availability-mark" aria-hidden="true"></span>
+                  <span>{site.availability.label}</span>
+                </p>
+              )
+            }
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Areas of practice">
+          <div class="hero-card-top"><span>Focus / 03</span><span>2026</span></div>
+          <div class="hero-orbit" aria-hidden="true"><span></span><span></span><span></span><b>PM</b></div>
+          <ul class="hero-focus-list">
+            <li><span>01</span> Product strategy</li>
+            <li><span>02</span> UX / UI design</li>
+            <li><span>03</span> AI-enabled products</li>
+          </ul>
+        </aside>
       </div>
     </section>
 
