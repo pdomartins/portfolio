@@ -1,0 +1,98 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+const workCurrent = pathname === "/" || pathname.startsWith("/work");
+const aboutCurrent = pathname === "/about";
+---
+
+<noscript>
+  <style>
+    @media (max-width: 40rem) {
+      .menu-button {
+        display: none !important;
+      }
+
+      .site-nav {
+        display: flex !important;
+        flex-basis: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 0;
+        padding-top: 0.85rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .site-nav a {
+        font-family: var(--font-serif);
+        font-size: 1.85rem;
+        color: var(--fg);
+        text-decoration: none;
+      }
+    }
+  </style>
+</noscript>
+
+<header class="site-header">
+  <div class="container bar">
+    <a class="wordmark" href="/">Pedro Martins</a>
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
+      <a href="/#work" aria-current={workCurrent ? "page" : undefined}>Work</a>
+      <a href="/about" aria-current={aboutCurrent ? "page" : undefined}>About</a>
+    </nav>
+    <div class="bar-tools">
+      <ThemeToggle />
+      <button
+        class="menu-button"
+        type="button"
+        data-menu-button
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <span data-menu-label>Menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  function menuButton() {
+    return document.querySelector<HTMLButtonElement>("[data-menu-button]");
+  }
+
+  function menuPanel() {
+    return document.getElementById("site-nav");
+  }
+
+  function setMenu(open: boolean) {
+    const button = menuButton();
+    const panel = menuPanel();
+    if (!button || !panel) return;
+    panel.classList.toggle("is-open", open);
+    button.setAttribute("aria-expanded", String(open));
+    const label = button.querySelector("[data-menu-label]");
+    if (label) label.textContent = open ? "Close" : "Menu";
+  }
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+
+    if (target.closest("[data-menu-button]")) {
+      setMenu(!menuPanel()?.classList.contains("is-open"));
+      return;
+    }
+
+    if (target.closest("#site-nav a")) setMenu(false);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape" || !menuPanel()?.classList.contains("is-open")) return;
+    setMenu(false);
+    menuButton()?.focus();
+  });
+
+  window.matchMedia("(min-width: 40.01rem)").addEventListener("change", (event) => {
+    if (event.matches) setMenu(false);
+  });
+</script>

@@ -1,0 +1,32 @@
+---
+import ExternalLink from "./ExternalLink.astro";
+import { site } from "../data/site";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-name">{site.name}</p>
+      <p class="footer-role">{site.role}</p>
+    </div>
+    <ul class="footer-links">
+      {
+        site.email && (
+          <li>
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+          </li>
+        )
+      }
+      {
+        site.linkedin && (
+          <li>
+            <ExternalLink href={site.linkedin}>LinkedIn</ExternalLink>
+          </li>
+        )
+      }
+    </ul>
+    <p class="footer-meta">© {year}</p>
+  </div>
+</footer>

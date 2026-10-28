@@ -1,0 +1,101 @@
+---
+import Copy from "../components/Copy.astro";
+import PageContainer from "../components/PageContainer.astro";
+import PlaceholderMedia from "../components/PlaceholderMedia.astro";
+import ProjectNav from "../components/ProjectNav.astro";
+import { formatIndex, visibleMeta, type Project } from "../data/projects";
+
+interface Props {
+  project: Project;
+  index: number;
+  previous: Project | null;
+  next: Project | null;
+}
+
+const { project, index, previous, next } = Astro.props;
+const meta = visibleMeta(project.meta);
+const indexLabel = formatIndex(index);
+const gallery = project.gallery ?? [];
+---
+
+<article>
+  <PageContainer>
+    <header class="project-header">
+      <a class="back-link" href="/#work">← All work</a>
+      <p class="eyebrow project-index">{indexLabel}</p>
+      <h1>{project.title}</h1>
+      <p class="project-descriptor">{project.descriptor}</p>
+      <div class="project-intro">
+        <Copy copy={project.introduction} />
+      </div>
+      {
+        meta.length > 0 && (
+          <dl class="meta">
+            {meta.map((item) => (
+              <div>
+                <dt>{item.label}</dt>
+                <dd>{item.value}</dd>
+              </div>
+            ))}
+          </dl>
+        )
+      }
+    </header>
+
+    <figure class="project-hero">
+      <PlaceholderMedia
+        label={project.title}
+        indexLabel={indexLabel}
+        tone="2"
+        ratio="16 / 9"
+        image={project.image}
+      />
+      {project.image?.caption && <figcaption>{project.image.caption}</figcaption>}
+    </figure>
+
+    <section class="case-section" aria-labelledby="context-title">
+      <h2 id="context-title">Context and challenge</h2>
+      <Copy copy={project.sections.context} />
+    </section>
+
+    <section class="case-section" aria-labelledby="approach-title">
+      <h2 id="approach-title">Approach and process</h2>
+      <Copy copy={project.sections.approach} />
+    </section>
+
+    <section class="case-section" aria-labelledby="decisions-title">
+      <h2 id="decisions-title">Key design decisions</h2>
+      <Copy copy={project.sections.decisions} />
+    </section>
+
+    <section class="case-section has-media" aria-labelledby="visuals-title">
+      <div class="case-copy">
+        <h2 id="visuals-title">Final experience and visuals</h2>
+        <Copy copy={project.sections.visuals} />
+      </div>
+      {
+        gallery.length > 0 ? (
+          <div class="gallery">
+            {gallery.map((image) => (
+              <figure>
+                <PlaceholderMedia label={project.title} ratio="16 / 10" image={image} />
+                {image.caption && <figcaption>{image.caption}</figcaption>}
+              </figure>
+            ))}
+          </div>
+        ) : (
+          <div class="case-media">
+            <PlaceholderMedia label="Visuals" indexLabel={indexLabel} tone="3" ratio="3 / 2" />
+          </div>
+        )
+      }
+    </section>
+
+    <section class="case-section" aria-labelledby="outcomes-title">
+      <h2 id="outcomes-title">Outcomes and learnings</h2>
+      <Copy copy={project.sections.outcomes} />
+    </section>
+  </PageContainer>
+
+  <ProjectNav previous={previous} next={next} />
+</article>

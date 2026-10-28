@@ -1,0 +1,26 @@
+---
+import type { ProjectImage } from "../data/projects";
+
+interface Props {
+  label: string;
+  indexLabel?: string;
+  tone?: string;
+  ratio?: string;
+  image?: ProjectImage;
+}
+
+const { label, indexLabel, tone = "1", ratio = "4 / 3", image } = Astro.props;
+---
+
+<div class="media" style={`--ratio: ${ratio}`}>
+  {
+    image ? (
+      <img src={image.src} alt={image.alt} decoding="async" />
+    ) : (
+      <div class="plate" data-tone={tone} aria-hidden="true">
+        {indexLabel && <span class="plate-index">{indexLabel}</span>}
+        <span class="plate-label">{label}</span>
+      </div>
+    )
+  }
+</div>

@@ -1,0 +1,57 @@
+---
+import ExternalLink from "../components/ExternalLink.astro";
+import PageContainer from "../components/PageContainer.astro";
+import ProjectGrid from "../components/ProjectGrid.astro";
+import Section from "../components/Section.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { projects } from "../data/projects";
+import { site } from "../data/site";
+
+const count = String(projects.length).padStart(2, "0");
+const jsonLd: Record<string, unknown> = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  jobTitle: site.role,
+  description: site.description,
+  sameAs: site.linkedin ? [site.linkedin] : [],
+};
+
+if (Astro.site) jsonLd.url = Astro.site.href;
+---
+
+<BaseLayout title={site.name} description={site.description} jsonLd={jsonLd}>
+  <PageContainer>
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow hero-eyebrow">{site.role}</p>
+      <h1 id="hero-title" class="hero-title">Turning complexity into meaningful digital experiences.</h1>
+      <div class="hero-footer">
+        <p class="hero-support">{site.description}</p>
+        {
+          site.availability.visible && site.availability.label && (
+            <p class="availability">
+              <span class="availability-mark" aria-hidden="true"></span>
+              <span>{site.availability.label}</span>
+            </p>
+          )
+        }
+      </div>
+    </section>
+
+    <Section id="work" title="Selected work" eyebrow={`01–${count}`}>
+      <ProjectGrid projects={projects} />
+    </Section>
+
+    <Section id="contact" variant="closing" title="Let’s work on something complex.">
+      <p>For collaborations and new work, reach out through the links below.</p>
+      {
+        (site.linkedin || site.email) && (
+          <p class="closing-links">
+            {site.linkedin && <ExternalLink href={site.linkedin}>LinkedIn</ExternalLink>}
+            {site.email && <a href={`mailto:${site.email}`}>{site.email}</a>}
+          </p>
+        )
+      }
+    </Section>
+  </PageContainer>
+</BaseLayout>

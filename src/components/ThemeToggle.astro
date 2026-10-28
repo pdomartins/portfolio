@@ -1,0 +1,71 @@
+<button
+  class="theme-toggle"
+  type="button"
+  data-theme-toggle
+  aria-label="Switch to dark theme"
+>
+  <span class="theme-when-light">Dark</span>
+  <span class="theme-when-dark">Light</span>
+</button>
+
+<script is:inline>
+  (function () {
+    var dark = document.documentElement.dataset.theme === "dark";
+    var button = document.querySelector("[data-theme-toggle]");
+    if (!button) return;
+    button.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+  })();
+</script>
+
+<script>
+  const storageKey = "theme";
+
+  function currentTheme(): "light" | "dark" {
+    return document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+  }
+
+  function storeTheme(theme: "light" | "dark") {
+    try {
+      localStorage.setItem(storageKey, theme);
+    } catch {
+      /* Private browsing can block storage. The choice still applies for this view. */
+    }
+  }
+
+  function readStoredTheme(): "light" | "dark" | null {
+    try {
+      const value = localStorage.getItem(storageKey);
+      return value === "light" || value === "dark" ? value : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function applyTheme(theme: "light" | "dark", persist: boolean) {
+    document.documentElement.dataset.theme = theme;
+    document.querySelector('meta[name="theme-color"]')?.setAttribute(
+      "content",
+      theme === "dark" ? "#121110" : "#f4f1eb",
+    );
+    document.querySelector("[data-theme-toggle]")?.setAttribute(
+      "aria-label",
+      theme === "dark" ? "Switch to light theme" : "Switch to dark theme",
+    );
+    if (persist) storeTheme(theme);
+  }
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof Element) || !target.closest("[data-theme-toggle]")) return;
+    applyTheme(currentTheme() === "dark" ? "light" : "dark", true);
+  });
+
+  document.addEventListener("astro:page-load", () => {
+    applyTheme(currentTheme(), false);
+  });
+
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
+    if (readStoredTheme()) return;
+    applyTheme(event.matches ? "dark" : "light", false);
+  });
+</script>

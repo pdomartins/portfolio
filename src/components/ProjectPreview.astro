@@ -1,0 +1,30 @@
+---
+import PlaceholderMedia from "./PlaceholderMedia.astro";
+import { formatIndex, type Project } from "../data/projects";
+
+interface Props {
+  project: Project;
+  index: number;
+}
+
+const { project, index } = Astro.props;
+const tones = ["2", "1", "3", "4", "1", "3", "4"];
+const tone = tones[index] ?? "1";
+---
+
+<li class:list={["preview", project.featured && "is-featured"]}>
+  <a class="preview-link" href={`/work/${project.slug}`}>
+    <PlaceholderMedia
+      label={project.title}
+      indexLabel={formatIndex(index)}
+      tone={tone}
+      ratio={project.featured ? "16 / 10" : "4 / 3"}
+      image={project.image}
+    />
+    <div class="preview-copy">
+      <p class="eyebrow preview-index" aria-hidden="true">{formatIndex(index)}</p>
+      <h3 class="preview-title">{project.title}</h3>
+      <p class="preview-descriptor">{project.descriptor}</p>
+    </div>
+  </a>
+</li>

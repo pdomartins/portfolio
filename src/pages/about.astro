@@ -1,0 +1,414 @@
+---
+import ExternalLink from "../components/ExternalLink.astro";
+import PageContainer from "../components/PageContainer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { about } from "../data/about";
+
+const description =
+  "Senior Product Designer with 9+ years across digital products, enterprise SaaS, fintech, e-commerce, and strategic innovation.";
+---
+
+<BaseLayout title="About" description={description}>
+  <PageContainer>
+    <article class="about-page">
+      <header class="about-opening">
+        <p class="eyebrow">{about.eyebrow}</p>
+        <h1 class="about-headline">{about.headline}</h1>
+        <div class="about-intro">
+          {about.introduction.map((paragraph) => <p>{paragraph}</p>)}
+          <p class="about-perspective">{about.perspective}</p>
+        </div>
+      </header>
+
+      <section class="about-section" id="experience" aria-labelledby="experience-title">
+        <h2 id="experience-title">Experience</h2>
+        <ol class="role-list">
+          {
+            about.experience.map((job) => (
+              <li class="role">
+                <div class="role-meta">
+                  <p class="role-dates">{job.dates}</p>
+                  <p class="role-company">{job.company}</p>
+                </div>
+                <div class="role-body">
+                  <h3>{job.role}</h3>
+                  <p>{job.summary}</p>
+                  {job.points && (
+                    <ul class="role-points">
+                      {job.points.map((point) => (
+                        <li>{point}</li>
+                      ))}
+                    </ul>
+                  )}
+                  {job.notes?.map((note) => (
+                    <p class="role-note">
+                      <span>{note.label}</span>
+                      {note.text}
+                    </p>
+                  ))}
+                </div>
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+
+      <section class="about-section" id="education" aria-labelledby="education-title">
+        <h2 id="education-title">Education &amp; Learning</h2>
+        <div class="study-grid">
+          <div>
+            <h3>Degrees</h3>
+            <ul class="study-list">
+              {
+                about.degrees.map((item) => (
+                  <li>
+                    <p class="study-name">{item.name}</p>
+                    <p class="study-meta">
+                      {item.institution}
+                      <span aria-hidden="true"> · </span>
+                      <span class="sr-only">, </span>
+                      {item.period}
+                    </p>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div>
+            <h3>Courses</h3>
+            <ul class="study-list">
+              {
+                about.courses.map((item) => (
+                  <li>
+                    <p class="study-name">{item.name}</p>
+                    <p class="study-meta">
+                      {item.institution}
+                      <span aria-hidden="true"> · </span>
+                      <span class="sr-only">, </span>
+                      {item.period}
+                    </p>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" id="practice" aria-labelledby="practice-title">
+        <h2 id="practice-title">Areas of Practice</h2>
+        <div class="practice-grid">
+          {
+            about.practice.map((group) => (
+              <div>
+                <h3>{group.title}</h3>
+                <ul class="practice-list">
+                  {group.items.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="about-section" id="recognition" aria-labelledby="recognition-title">
+        <h2 id="recognition-title">Recognition</h2>
+        <ul class="award-list">
+          {
+            about.awards.map((award) => (
+              <li>
+                <p class="award-when">{award.when}</p>
+                <h3>{award.name}</h3>
+                <p class="award-detail">{award.detail}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section class="about-close" id="contact" aria-labelledby="about-contact-title">
+        <h2 id="about-contact-title">{about.contact.headline}</h2>
+        <p>{about.contact.text}</p>
+        <ul class="about-contact-links">
+          <li>
+            <a href={`mailto:${about.contact.email}`}>{about.contact.email}</a>
+          </li>
+          <li>
+            <ExternalLink href={about.contact.linkedin}>LinkedIn</ExternalLink>
+          </li>
+        </ul>
+      </section>
+    </article>
+  </PageContainer>
+</BaseLayout>
+
+<style>
+  .about-page {
+    padding-bottom: var(--space-6);
+  }
+
+  .about-opening {
+    padding-block: var(--space-8) var(--space-7);
+  }
+
+  .about-headline {
+    max-width: 16em;
+    margin-top: var(--space-4);
+    font-family: var(--font-serif);
+    font-optical-sizing: auto;
+    font-size: clamp(2.15rem, 1rem + 3.1vw, 3.65rem);
+    font-weight: 450;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+  }
+
+  .about-intro {
+    max-width: 40rem;
+    margin-top: var(--space-6);
+    display: grid;
+    gap: 1rem;
+  }
+
+  .about-intro p {
+    font-family: var(--font-serif);
+    font-size: clamp(1.2rem, 1.5vw, 1.45rem);
+    font-weight: 450;
+    letter-spacing: -0.02em;
+    line-height: 1.4;
+  }
+
+  .about-intro p.about-perspective {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: var(--leading-body);
+    color: var(--fg-muted);
+  }
+
+  .about-section,
+  .about-close {
+    scroll-margin-top: calc(var(--header-h) + 0.75rem);
+  }
+
+  .about-section {
+    padding-top: var(--space-7);
+  }
+
+  .about-section h2,
+  .about-close h2 {
+    font-family: var(--font-serif);
+    font-optical-sizing: auto;
+    font-size: clamp(1.85rem, 2.4vw, 2.45rem);
+    font-weight: 480;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  .role-list,
+  .study-list,
+  .practice-list,
+  .award-list,
+  .about-contact-links,
+  .role-points {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .role-list {
+    margin-top: var(--space-5);
+  }
+
+  .role {
+    display: grid;
+    gap: 0.65rem;
+    padding-block: var(--space-5);
+    border-top: 1px solid var(--line);
+  }
+
+  .role-dates,
+  .study-grid h3,
+  .practice-grid h3,
+  .role-note span {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+
+  .role-company {
+    margin-top: 0.4rem;
+    font-size: var(--text-sm);
+    line-height: 1.35;
+    color: var(--fg-muted);
+  }
+
+  .role-dates {
+    color: var(--fg);
+  }
+
+  .study-meta,
+  .award-detail,
+  .role-note {
+    color: var(--fg-muted);
+  }
+
+  .role-body h3,
+  .study-name,
+  .award-list h3 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  .role-body h3 {
+    font-size: 1.45rem;
+    line-height: 1.2;
+    margin-bottom: 0.55rem;
+  }
+
+  .role-points {
+    display: grid;
+    gap: 0.55rem;
+    margin-top: 0.95rem;
+  }
+
+  .role-points li {
+    position: relative;
+    padding-left: 0.95rem;
+  }
+
+  .role-points li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 0.4rem;
+    height: 1px;
+    background: var(--fg-muted);
+  }
+
+  .role-note {
+    margin-top: 1rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--line);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+  }
+
+  .role-note span {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--fg);
+  }
+
+  .study-grid,
+  .practice-grid {
+    display: grid;
+    gap: var(--space-6);
+    margin-top: var(--space-5);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--line);
+  }
+
+  .study-list,
+  .practice-list {
+    display: grid;
+    gap: 1rem;
+    margin-top: 0.9rem;
+  }
+
+  .practice-list {
+    gap: 0.35rem;
+  }
+
+  .study-name {
+    font-size: 1.2rem;
+    line-height: 1.25;
+  }
+
+  .study-meta {
+    margin-top: 0.25rem;
+    font-size: var(--text-sm);
+  }
+
+  .award-list {
+    display: grid;
+    gap: var(--space-5);
+    margin-top: var(--space-5);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--line);
+  }
+
+  .award-when {
+    font-family: var(--font-serif);
+    font-size: clamp(1.6rem, 2vw, 2rem);
+    font-weight: 450;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .award-list h3 {
+    margin-top: 0.55rem;
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+
+  .award-detail {
+    margin-top: 0.3rem;
+    font-size: var(--text-sm);
+  }
+
+  .about-close {
+    max-width: 36rem;
+    margin-top: var(--space-7);
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-top: 1px solid var(--line);
+  }
+
+  .about-close p {
+    margin-top: 0.85rem;
+    color: var(--fg-muted);
+  }
+
+  .about-contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    margin-top: var(--space-5);
+  }
+
+  .about-contact-links :global(a) {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+    text-decoration: underline;
+    text-underline-offset: 0.16em;
+    overflow-wrap: anywhere;
+  }
+
+  @media (min-width: 48rem) {
+    .role {
+      grid-template-columns: 11.5rem minmax(0, 42rem);
+      column-gap: var(--space-6);
+      align-items: start;
+    }
+
+    .study-grid,
+    .practice-grid {
+      grid-template-columns: 1fr 1fr;
+      column-gap: var(--space-7);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .award-list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      column-gap: var(--space-6);
+    }
+  }
+</style>

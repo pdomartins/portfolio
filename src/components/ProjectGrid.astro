@@ -1,0 +1,14 @@
+---
+import ProjectPreview from "./ProjectPreview.astro";
+import type { Project } from "../data/projects";
+
+interface Props {
+  projects: Project[];
+}
+
+const { projects } = Astro.props;
+---
+
+<ol class="project-grid">
+  {projects.map((project, index) => <ProjectPreview project={project} index={index} />)}
+</ol>

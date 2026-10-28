@@ -1,0 +1,15 @@
+---
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getProjectRoutes, type ProjectRoute } from "../../data/projects";
+
+export function getStaticPaths() {
+  return getProjectRoutes();
+}
+
+const { project, index, previous, next } = Astro.props as ProjectRoute;
+---
+
+<BaseLayout title={project.title} description={`${project.title}. ${project.descriptor}.`} ogType="article">
+  <ProjectLayout project={project} index={index} previous={previous} next={next} />
+</BaseLayout>

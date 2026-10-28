@@ -1,0 +1,60 @@
+/*
+  Design tokens.
+  Light and dark values live here. The theme script in BaseLayout.astro
+  uses the same background colors for the browser theme-color meta tag.
+*/
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f4f1eb;
+  --bg-elevated: #fbf9f6;
+  --fg: #1b1916;
+  --fg-muted: #4e4943;
+  --line: #ddd6cb;
+  --mark: #1e4d3c;
+  --plate: #e7e1d6;
+  --focus: #1b1916;
+  --theme-color: #f4f1eb;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #121110;
+  --bg-elevated: #1c1b18;
+  --fg: #efeae3;
+  --fg-muted: #c3bbb1;
+  --line: #2e2b27;
+  --mark: #9dbeab;
+  --plate: #1c1b18;
+  --focus: #efeae3;
+  --theme-color: #121110;
+}
+
+:root {
+  --font-serif: "Newsreader Variable", "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+  --font-sans: "Source Sans 3 Variable", "Source Sans 3", "Segoe UI", sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.1875rem;
+  --text-xl: clamp(1.75rem, 2.2vw, 2.25rem);
+  --text-display: clamp(2.45rem, 1.15rem + 4.4vw, 5.25rem);
+  --leading-body: 1.6;
+  --tracking-label: 0.12em;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 7rem;
+  --header-h: 4.25rem;
+  --content: 72rem;
+  --content-narrow: 40rem;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --duration: 180ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+}

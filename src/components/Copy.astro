@@ -1,0 +1,15 @@
+---
+import { textParagraphs, type CopyBlock } from "../data/projects";
+
+interface Props {
+  copy: CopyBlock;
+}
+
+const { copy } = Astro.props;
+const paragraphs = textParagraphs(copy.text);
+---
+
+<div class="copy">
+  {copy.placeholder && <p class="placeholder-kicker">Placeholder</p>}
+  {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+</div>
