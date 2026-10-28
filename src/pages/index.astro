@@ -30,14 +30,6 @@ if (Astro.site) jsonLd.url = Astro.site.href;
           <p class="hero-lead">Strategy, UX/UI, and AI for complex products, services, and systems.</p>
           <div class="hero-footer">
             <p class="hero-support">{site.description}</p>
-            {
-              site.availability.visible && site.availability.label && (
-                <p class="availability">
-                  <span class="availability-mark" aria-hidden="true"></span>
-                  <span>{site.availability.label}</span>
-                </p>
-              )
-            }
           </div>
         </div>
         <aside class="hero-card" aria-label="Areas of practice">
