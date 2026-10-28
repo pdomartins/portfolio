@@ -173,13 +173,20 @@ p {
 }
 
 .wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.28em;
   font-family: var(--font-sans);
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 650;
   letter-spacing: -0.035em;
   line-height: 1;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.wordmark span {
+  display: inline-block;
 }
 
 .site-nav {
@@ -281,12 +288,32 @@ p {
   }
 
   .site-nav a {
-    font-family: var(--font-serif);
-    font-size: 1.85rem;
-    letter-spacing: -0.03em;
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    font-weight: 650;
+    letter-spacing: 0.1em;
     color: var(--fg);
     padding-block: 0.2rem;
     text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .wordmark {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    font-size: 1.5rem;
+    line-height: 0.82;
+    white-space: normal;
+  }
+
+  .wordmark span:last-child {
+    margin-left: 0.72em;
+  }
+
+  .language-toggle {
+    min-width: 4.1rem;
+    padding-inline: 0.4rem;
   }
 }
 
@@ -431,15 +458,40 @@ p {
 
 .hero-orbit span {
   position: absolute;
+  top: calc(50% - 0.225rem);
+  left: calc(50% - 0.225rem);
   width: 0.45rem;
   height: 0.45rem;
   border-radius: 50%;
   background: var(--fg);
+  animation: orbit 12s linear infinite;
 }
 
-.hero-orbit span:nth-child(1) { top: 12%; left: 48%; }
-.hero-orbit span:nth-child(2) { right: 13%; bottom: 27%; background: var(--mark); }
-.hero-orbit span:nth-child(3) { bottom: 18%; left: 20%; }
+.hero-orbit span:nth-child(1) { animation-delay: -4s; }
+.hero-orbit span:nth-child(2) { background: var(--mark); animation-delay: -8s; }
+.hero-orbit span:nth-child(3) { animation-delay: -10s; }
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(5.1rem) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(5.1rem) rotate(-360deg); }
+}
+
+@media (min-width: 48rem) {
+  .hero-orbit span {
+    animation-name: orbit-large;
+  }
+}
+
+@keyframes orbit-large {
+  from { transform: rotate(0deg) translateX(7rem) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(7rem) rotate(-360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-orbit span {
+    animation: none;
+  }
+}
 
 .hero-orbit b {
   position: absolute;
