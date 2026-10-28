@@ -191,7 +191,7 @@ p {
 
 .site-nav a {
   color: var(--fg-muted);
-  font-size: 0.9375rem;
+  font-size: 1rem;
   text-decoration: none;
 }
 
@@ -222,6 +222,11 @@ p {
   text-transform: uppercase;
   line-height: 1;
   transition: border-color var(--duration) var(--ease);
+}
+
+.theme-toggle,
+.menu-button {
+  min-height: 2.2rem;
 }
 
 .theme-toggle:hover,
@@ -313,7 +318,7 @@ p {
   max-width: 36rem;
   color: var(--fg-muted);
   font-size: var(--text-lg);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .availability {
@@ -426,7 +431,7 @@ p {
 
 .preview-title {
   display: inline;
-  font-size: 1.65rem;
+  font-size: 1.75rem;
   line-height: 1.1;
   background-image: linear-gradient(currentColor, currentColor);
   background-position: 0 100%;
@@ -439,6 +444,7 @@ p {
   max-width: 28ch;
   margin-top: 0.4rem;
   color: var(--fg-muted);
+  line-height: 1.5;
 }
 
 .preview-link:hover .preview-title,
