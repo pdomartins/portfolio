@@ -31,13 +31,13 @@ export interface Award {
 
 export const about = {
   eyebrow: "About",
-  headline: "I turn complex products, services, and systems into experiences people can understand and use.",
+  headline: "I design digital products that move businesses forward — through strategy, UX/UI, and AI.",
   introduction: [
     "I’m Pedro Martins, a Senior Product Designer with 9+ years of experience across digital products, enterprise SaaS, fintech, e-commerce, and strategic innovation.",
-    "I work across the full product design lifecycle — from discovery and strategic framing to interaction design, prototyping, and delivery. My focus is making complex systems clearer, more useful, and more meaningful for the people who depend on them.",
+    "I combine product strategy, UX/UI design, and AI to turn complex challenges into clear, useful digital experiences — from discovery and interaction design to prototyping and delivery.",
   ],
   perspective:
-    "My background combines digital product design with industrial design, strategic design, and innovation. It helps me move between details and systems — from individual interactions to broader services, operating models, and business ecosystems.",
+    "My background combines digital product design, industrial design, strategic innovation, and emerging technologies. This perspective helps me connect user needs, business goals, and AI-enabled possibilities across products, services, and systems.",
   experience: [
     {
       company: "Novigo IT",

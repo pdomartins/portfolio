@@ -42,7 +42,9 @@ const aboutCurrent = pathname === "/about";
     </nav>
     <div class="bar-tools">
       <button class="language-toggle" type="button" data-language-toggle aria-label="Change language">
-        <span data-language-label>PT</span>
+        <span class="language-flag" data-language-flag="pt" aria-label="Português">🇧🇷</span>
+        <span class="language-divider" aria-hidden="true">/</span>
+        <span class="language-flag is-active" data-language-flag="en" aria-label="English">🇺🇸</span>
       </button>
       <ThemeToggle />
       <button
@@ -132,10 +134,10 @@ const aboutCurrent = pathname === "/about";
     "Experimental mobility concept": "Conceito experimental de mobilidade",
     "Senior Product Designer": "Senior Product Designer",
     "Turning complexity into meaningful digital experiences.": "Transformando complexidade em experiências digitais significativas.",
-    "I turn complex products, services, and systems into experiences people can understand and use.": "Transformo produtos, serviços e sistemas complexos em experiências que as pessoas conseguem entender e usar.",
+    "I design digital products that move businesses forward — through strategy, UX/UI, and AI.": "Crio produtos digitais que impulsionam negócios — unindo estratégia, UX/UI e IA.",
     "I’m Pedro Martins, a Senior Product Designer with 9+ years of experience across digital products, enterprise SaaS, fintech, e-commerce, and strategic innovation.": "Sou Pedro Martins, Senior Product Designer com mais de 9 anos de experiência em produtos digitais, SaaS corporativo, fintech, e-commerce e inovação estratégica.",
-    "I work across the full product design lifecycle — from discovery and strategic framing to interaction design, prototyping, and delivery. My focus is making complex systems clearer, more useful, and more meaningful for the people who depend on them.": "Atuo em todo o ciclo de design de produto — da descoberta e definição estratégica ao design de interação, prototipação e entrega. Meu foco é tornar sistemas complexos mais claros, úteis e significativos para as pessoas que dependem deles.",
-    "My background combines digital product design with industrial design, strategic design, and innovation. It helps me move between details and systems — from individual interactions to broader services, operating models, and business ecosystems.": "Minha experiência combina design de produtos digitais, design industrial, design estratégico e inovação. Isso me ajuda a transitar entre detalhes e sistemas — de interações individuais a serviços, modelos operacionais e ecossistemas de negócio.",
+    "I combine product strategy, UX/UI design, and AI to turn complex challenges into clear, useful digital experiences — from discovery and interaction design to prototyping and delivery.": "Combino estratégia de produto, design UX/UI e IA para transformar desafios complexos em experiências digitais claras e úteis — da descoberta e do design de interação à prototipação e entrega.",
+    "My background combines digital product design, industrial design, strategic innovation, and emerging technologies. This perspective helps me connect user needs, business goals, and AI-enabled possibilities across products, services, and systems.": "Minha experiência combina design de produtos digitais, design industrial, inovação estratégica e tecnologias emergentes. Essa perspectiva me ajuda a conectar necessidades das pessoas, objetivos de negócio e possibilidades habilitadas por IA em produtos, serviços e sistemas.",
     "I connect strategy, design, and technology to create digital products that make complex things feel simple.": "Conecto estratégia, design e tecnologia para criar produtos digitais que tornam o complexo mais simples.",
     "Skip to content": "Ir para o conteúdo",
     "Page not found": "Página não encontrada",
@@ -147,8 +149,8 @@ const aboutCurrent = pathname === "/about";
   function setLanguage(language: "en" | "pt") {
     document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
     document.documentElement.dataset.language = language;
-    document.querySelectorAll<HTMLElement>("[data-language-label]").forEach((item) => {
-      item.textContent = language === "pt" ? "EN" : "PT";
+    document.querySelectorAll<HTMLElement>("[data-language-flag]").forEach((item) => {
+      item.classList.toggle("is-active", item.dataset.languageFlag === language);
     });
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     const nodes: Text[] = [];
@@ -177,18 +179,47 @@ const aboutCurrent = pathname === "/about";
 
 <style>
   .language-toggle {
-    border: 0;
-    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.42rem;
+    min-width: 4.55rem;
+    min-height: 2.2rem;
+    padding: 0.35rem 0.55rem;
+    border: 1px solid var(--line);
     background: transparent;
     color: var(--fg-muted);
     font: inherit;
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
+    font-size: 1.05rem;
+    line-height: 1;
     cursor: pointer;
+    transition: border-color var(--duration) var(--ease), color var(--duration) var(--ease), background-color var(--duration) var(--ease);
   }
 
   .language-toggle:hover,
   .language-toggle:focus-visible {
+    background: color-mix(in srgb, var(--fg) 5%, var(--bg));
     color: var(--fg);
+  }
+
+  .language-flag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.42;
+    filter: grayscale(0.35);
+    transform: scale(0.92);
+    transition: opacity var(--duration) var(--ease), filter var(--duration) var(--ease), transform var(--duration) var(--ease);
+  }
+
+  .language-flag.is-active {
+    opacity: 1;
+    filter: none;
+    transform: scale(1.08);
+  }
+
+  .language-divider {
+    color: var(--line);
+    font-size: 0.9rem;
   }
 </style>
