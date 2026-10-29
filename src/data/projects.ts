@@ -301,6 +301,63 @@ const silaPayProject: Project = {
   },
 };
 
+const vaptProject: Project = {
+  slug: "design-system",
+  title: "Vapt",
+  descriptor: "A design system for coherent digital products",
+  image: {
+    src: "/images/vapt/cover.jpg",
+    alt: "Vapt design system case study cover showing the brand on a mobile interface",
+    caption: "Building a scalable and efficient foundation for consistent digital products.",
+  },
+  gallery: [
+    {
+      src: "/images/vapt/challenge.jpg",
+      alt: "Vapt design system challenge, goals and success measures",
+      caption: "The brief translated into a design system challenge with clear signals of success.",
+      ratio: "2934 / 1650",
+    },
+    {
+      src: "/images/vapt/system.jpg",
+      alt: "Vapt visual language, colors, iconography, brand assets and product interface studies",
+      caption: "From color and iconography to product interfaces, one language became a shared source of truth.",
+      ratio: "2934 / 1650",
+    },
+  ],
+  meta: {
+    role: "Product Designer, Brand and Design Systems",
+    timeline: "2 months",
+    team: "Product Owner, developers and founders",
+    scope: "Brand language, UI foundation, components and product applications",
+  },
+  introduction: {
+    placeholder: false,
+    text: "Vapt needed a design foundation that could give a new digital product portfolio a recognizable voice and a reliable way to scale. I was responsible for translating the brand into a cohesive design language, building the system from its foundations, and applying it to the interfaces that brought the product to life.",
+  },
+  sections: {
+    context: {
+      placeholder: false,
+      text: "The challenge was to establish a cohesive brand and a scalable design system for Vapt from scratch, ensuring consistency across future products. The system needed to work across customer ordering screens, operational workflows and staff management dashboards, without treating each interface as a separate visual exercise.\n\nThe project sat between brand positioning and product delivery. It had to differentiate Vapt in a crowded restaurant and digital ordering landscape while giving product and engineering teams a practical foundation they could reuse.",
+    },
+    approach: {
+      placeholder: false,
+      text: "The work began with a strategic brand positioning exercise and a comprehensive color study. I translated the emerging identity into a visual language that could remain expressive in communication and disciplined inside complex product interfaces.\n\nFrom there, I structured the experience around the main user journeys and the relationships between restaurants, staff, customers, orders, menus and payments. The system evolved through information architecture, interface patterns, component definitions, iconography, states and responsive applications.\n\nThe goal was not only to create reusable components, but to create the rules that made reuse meaningful: hierarchy, spacing, color roles, typography, interaction feedback and the relationship between brand expression and operational clarity.",
+    },
+    decisions: {
+      placeholder: false,
+      text: "The visual system centered on a warm orange as the primary brand signal, supported by black, gray and purple roles that could separate action, structure, status and emphasis. This palette gave Vapt a recognizable personality while keeping interfaces legible and adaptable.\n\nIconography became another important bridge between brand and product. A dedicated set of restaurant, ordering, payment and operational icons helped the system communicate quickly without adding visual noise.\n\nThe component foundation was designed to travel across customer-facing ordering experiences and staff-facing management tools. The same principles could support a menu view, a product card, a dashboard state or an administrative workflow without making the experience feel fragmented.",
+    },
+    visuals: {
+      placeholder: false,
+      text: "The selected artifacts show the system at different scales: the initial product framing, the challenge and success measures, the color and icon studies, and the first interface applications. Together they show how a design system moves from abstract principles to concrete product decisions.\n\nThe final direction connected Vapt's brand identity to a flexible digital toolkit: expressive enough for customer communication, structured enough for product delivery, and clear enough to support future interfaces as the portfolio expanded.",
+    },
+    outcomes: {
+      placeholder: false,
+      text: "The outcome was a cohesive and unified design language for Vapt's new brand and future products. The design system became a single source of truth connecting identity, interface, components and product delivery.\n\nSuccess was framed around Design System Adoption Rate, Component Reusability Rate and Design-to-Code Parity, with reduction in user errors as a direct signal of improved usability. More than a visual refresh, the work created a scalable framework that could accelerate development while preserving clarity and consistency.",
+    },
+  },
+};
+
 const daycovalProject: Project = {
   slug: "banking-app",
   title: "Banco Daycoval",
@@ -449,11 +506,7 @@ export const projects: Project[] = [
   silaPayProject,
   daycovalProject,
   nexaProject,
-  createProject({
-    slug: "design-system",
-    title: "Vapt",
-    descriptor: "Design system",
-  }),
+  vaptProject,
   createProject({
     slug: "sustainability",
     title: "Dexco",
