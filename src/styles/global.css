@@ -1020,6 +1020,70 @@ p {
     min-width: 0;
     margin-top: 0;
   }
+
+  /* Sila Pay uses a more expressive, image-led editorial rhythm. */
+  .project-sila-pay .gallery {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--space-5);
+  }
+
+  .project-sila-pay .gallery figure:nth-child(1),
+  .project-sila-pay .gallery figure:nth-child(5),
+  .project-sila-pay .gallery figure:nth-child(8) {
+    grid-column: span 8;
+  }
+
+  .project-sila-pay .gallery figure:nth-child(2),
+  .project-sila-pay .gallery figure:nth-child(6),
+  .project-sila-pay .gallery figure:nth-child(9) {
+    grid-column: span 4;
+  }
+
+  .project-sila-pay .gallery figure:nth-child(3),
+  .project-sila-pay .gallery figure:nth-child(7),
+  .project-sila-pay .gallery figure:nth-child(10) {
+    grid-column: span 5;
+  }
+
+  .project-sila-pay .gallery figure:nth-child(4) {
+    grid-column: span 7;
+  }
+}
+
+.project-sila-pay .project-hero .media {
+  border-color: #2d2d35;
+  background: #0d0d10;
+}
+
+.project-sila-pay .project-hero .media::after {
+  background: linear-gradient(120deg, transparent 28%, rgba(154, 255, 0, 0.14) 46%, rgba(0, 120, 255, 0.14) 58%, transparent 74%);
+}
+
+.project-sila-pay .project-metric {
+  background: #15151a;
+  color: #f4f5f7;
+  border: 1px solid color-mix(in srgb, var(--fg) 16%, transparent);
+  border-top: 0.28rem solid var(--sila-accent, #9aff00);
+}
+
+.project-sila-pay .project-metric:nth-child(2) {
+  --sila-accent: #2f6cff;
+}
+
+.project-sila-pay .project-metric:nth-child(3) {
+  --sila-accent: #c600ff;
+}
+
+.project-sila-pay .project-metric p {
+  color: var(--fg-muted);
+}
+
+.project-sila-pay .gallery figure:nth-child(n + 8) .media {
+  background: #0d0d10;
+}
+
+.project-sila-pay .gallery figure:nth-child(n + 8) .media img {
+  object-fit: contain;
 }
 
 .project-nav {

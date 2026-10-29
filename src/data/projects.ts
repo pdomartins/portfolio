@@ -186,6 +186,115 @@ const iungoAiSuite: Project = {
   },
 };
 
+const silaPayProject: Project = {
+  slug: "sila-pay",
+  title: "Sila Pay",
+  descriptor: "A multi-currency payment gateway for digital commerce",
+  image: {
+    src: "/images/sila-pay/multi-device.jpg",
+    alt: "Sila Pay payment experiences shown across desktop, laptop and mobile devices",
+    caption: "One payment ecosystem, designed to move across screens, markets and moments.",
+  },
+  gallery: [
+    {
+      src: "/images/sila-pay/desktop-dashboard.png",
+      alt: "Sila Pay desktop dashboard with payment balance, transaction analytics and history",
+      caption: "A responsive operations dashboard for balances, payment flows and transaction intelligence.",
+    },
+    {
+      src: "/images/sila-pay/mobile-dashboard.jpg",
+      alt: "Sila Pay mobile dashboard with balance, payment shortcuts and recent transactions",
+      caption: "The same financial language carried into a compact mobile experience.",
+    },
+    {
+      src: "/images/sila-pay/laptop-dashboard.jpg",
+      alt: "Sila Pay laptop dashboard shown in an editorial product mockup",
+      caption: "A cross-device system for merchants who need to see and act on payment activity anywhere.",
+    },
+    {
+      src: "/images/sila-pay/mobile-credit.png",
+      alt: "Sila Pay mobile screens for balance, credit payment and transactions",
+      caption: "Banking-like moments designed around confidence, hierarchy and action.",
+    },
+    {
+      src: "/images/sila-pay/onboarding.png",
+      alt: "Sila Pay mobile onboarding screen with secure payment message",
+      caption: "A more secure gateway, expressed through a distinct visual and interaction language.",
+    },
+    {
+      src: "/images/sila-pay/signup.png",
+      alt: "Sila Pay account creation screen with generative gradient visual",
+      caption: "Acquisition and account creation with the same visual system as the core product.",
+    },
+    {
+      src: "/images/sila-pay/mobile-onboarding.jpg",
+      alt: "Sila Pay mobile dashboard and onboarding screens presented together",
+      caption: "From first touch to daily financial operations, the experience stays coherent.",
+    },
+    {
+      src: "/images/sila-pay/shape-prism.png",
+      alt: "Iridescent prism visual from the Sila Pay visual language",
+      caption: "Abstract visual assets gave the fintech system a more expressive edge.",
+    },
+    {
+      src: "/images/sila-pay/shape-wave.png",
+      alt: "Abstract purple wave visual from the Sila Pay visual language",
+      caption: "A visual vocabulary built for motion, trust and technology.",
+    },
+    {
+      src: "/images/sila-pay/shape-star.png",
+      alt: "Abstract iridescent star visual from the Sila Pay visual language",
+      caption: "Identity elements used as atmosphere, emphasis and product memory.",
+    },
+  ],
+  metrics: [
+    {
+      value: "7",
+      label: "languages designed into the product ecosystem",
+    },
+    {
+      value: "4",
+      label: "connected surfaces: app, dashboards, internal systems and CRM",
+    },
+    {
+      value: "360°",
+      label: "design ownership from guidelines and system foundations to final delivery",
+    },
+  ],
+  meta: {
+    role: "Lead Product Designer, UX/UI and Design Systems",
+    timeline: "Cross-platform fintech ecosystem",
+    team: "International product, engineering and business stakeholders",
+    scope: "Design guidelines, design system, responsive products and international alignment",
+  },
+  introduction: {
+    placeholder: false,
+    text: "Sila Pay is a payment gateway and fintech platform for digital commerce, bringing payments, balances, checkout, payment links, integrations, crypto-ready flows, and business operations into one ecosystem. I was the designer responsible for turning that breadth into a coherent cross-platform experience across mobile, desktop and internal tools.",
+  },
+  sections: {
+    context: {
+      placeholder: false,
+      text: "The product needed to operate at the intersection of payments, banking and commerce. Merchants had to move between everyday financial operations, payment acceptance, checkout, integrations, customer support and internal administration without feeling that they were switching products.\n\nThe experience also had to work across currencies, crypto-enabled use cases and international contexts. Product direction and project guidelines came from Russia, while the design work required continuous alignment with international stakeholders, distributed teams and different market expectations.",
+    },
+    approach: {
+      placeholder: false,
+      text: "I worked from the design guidelines into a complete product language: visual principles, UI patterns, interaction rules, responsive behavior, component states and documentation for cross-functional delivery. The design system was not treated as a static library; it became the connective tissue between the consumer app, merchant dashboards, internal systems and CRM workflows.\n\nThe work moved between journeys and levels of abstraction: onboarding and account creation, balances and transactions, PIX, card and boleto flows, crypto, payment links, checkout, integrations, analytics and support. I designed for desktop and mobile in parallel so the system could adapt without losing hierarchy or recognition.\n\nBecause the products were multilingual by design, the system also had to absorb seven languages: longer labels, different text densities, translated content and international collaboration were considered as part of the UX rather than left to the end.",
+    },
+    decisions: {
+      placeholder: false,
+      text: "The first decision was to create a strong visual anchor for a complex fintech ecosystem. A dark interface, vivid gradient accents and high-contrast states gave the product a recognizable character while preserving the seriousness expected from a payment platform.\n\nThe second was to make the dashboard feel operational, not ornamental. Balances, transaction history, payment performance and shortcuts were organized so users could understand the state of the business and act quickly. The mobile experience translated the same logic into compact cards, touch targets and a focused navigation model.\n\nThe third was to design the system for continuity. Components, guidelines and responsive rules allowed the same principles to travel across customer-facing apps, merchant operations, CRM, internal tools and future fintech solutions.",
+    },
+    visuals: {
+      placeholder: false,
+      text: "The visual language combines financial confidence with a more expressive digital identity: dark surfaces, electric green, blue and violet signals, luminous gradients, and abstract 3D forms. The moodboard is part of the system, not an afterthought; it gives the product a distinct emotional register in a category often dominated by generic interfaces.\n\nThe selected screens show the range of the work: desktop dashboards, responsive mobile banking experiences, onboarding, registration, credit and payment moments, multi-device compositions and the visual assets that helped unify the ecosystem.",
+    },
+    outcomes: {
+      placeholder: false,
+      text: "The result was a cross-platform fintech design foundation that could scale across products, teams and markets. Sila Pay gained a coherent relationship between brand, guidelines, design system and delivery, with the same UX logic visible in the app, dashboards, internal systems and CRM.\n\nThe final metrics are scope markers rather than commercial KPIs: they describe the breadth of the design responsibility and the product conditions the system was built to support. The larger outcome was a more unified payment experience, capable of carrying complex financial operations across seven languages and multiple device contexts.",
+    },
+  },
+};
+
 const daycovalProject: Project = {
   slug: "banking-app",
   title: "Banco Daycoval",
@@ -331,11 +440,7 @@ const nexaProject: Project = {
 
 export const projects: Project[] = [
   iungoAiSuite,
-  createProject({
-    slug: "sila-pay",
-    title: "Sila Pay",
-    descriptor: "Fintech product experiences",
-  }),
+  silaPayProject,
   daycovalProject,
   nexaProject,
   createProject({

@@ -19,7 +19,7 @@ const indexLabel = formatIndex(index);
 const gallery = project.gallery ?? [];
 ---
 
-<article>
+<article class:list={["project-page", `project-${project.slug}`]}>
   <PageContainer>
     <header class="project-header">
       <a class="back-link" href="/#work">← All work</a>
