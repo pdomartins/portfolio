@@ -113,19 +113,19 @@ const iungoAiSuite: Project = {
   },
   gallery: [
     {
-      src: "/images/iungo/organizer-dashboard.jpg",
-      alt: "Iungo Organizer dashboard showing catalog health and offer distribution",
+      src: "/images/iungo/engagement-dashboard-hq.png",
+      alt: "Iungo Engagement dashboard showing revenue, conversion, transactions and campaign performance",
+      caption: "Engagement connects campaigns, behavior and commercial outcomes in one operating view.",
+    },
+    {
+      src: "/images/iungo/organizer-search-hq.png",
+      alt: "Iungo Organizer search dashboard showing offer distribution, publishing status and product data",
       caption: "Organizer turns catalog operations into an observable, actionable system.",
     },
     {
-      src: "/images/iungo/organizer-product-detail.jpg",
-      alt: "Iungo Organizer product detail workflow with AI-generated product content",
-      caption: "AI-assisted product enrichment, designed as a guided workflow rather than a black box.",
-    },
-    {
-      src: "/images/iungo/organizer-ai-recommendations.jpg",
-      alt: "Iungo Organizer AI recommendations interface",
-      caption: "Recommendations make catalog quality improvements visible and easy to apply.",
+      src: "/images/iungo/organizer-products-hq.png",
+      alt: "Iungo Organizer product catalog screen with SKUs, channels and publication status",
+      caption: "A scalable catalog workspace for products, SKUs, channels and publication quality.",
     },
     {
       src: "/images/iungo/identity-dashboard.png",
@@ -133,23 +133,23 @@ const iungoAiSuite: Project = {
       caption: "A modular identity system that gives each capability a recognizable role.",
     },
     {
-      src: "/images/iungo/engagement-dashboard.jpg",
-      alt: "Iungo Engagement dashboard showing revenue, conversion, transactions and campaign performance",
-      caption: "Engagement connects campaigns, behavior and commercial outcomes in one operating view.",
+      src: "/images/iungo/organizer-product-edit-hq.png",
+      alt: "Iungo Organizer product editing workflow with structured content and AI assistance",
+      caption: "AI-assisted product enrichment, designed as a guided workflow rather than a black box.",
     },
     {
-      src: "/images/iungo/organizer-products.jpg",
-      alt: "Iungo Organizer product catalog screen with SKUs, channels and publication status",
-      caption: "A scalable catalog workspace for products, SKUs, channels and publication quality.",
-    },
-    {
-      src: "/images/iungo/organizer-channels.jpg",
-      alt: "Iungo Organizer channel connections and publication status",
+      src: "/images/iungo/organizer-rule-hq.png",
+      alt: "Iungo Organizer rule configuration workflow with email, SMS and WhatsApp channels",
       caption: "Operational complexity made legible across commerce channels.",
     },
     {
-      src: "/images/iungo/organizer-product-sheet.jpg",
-      alt: "Iungo Organizer product sheet with attributes, rules and mapping",
+      src: "/images/iungo/organizer-blocklist-hq.png",
+      alt: "Iungo Organizer blocklist dashboard with product restrictions and status controls",
+      caption: "Recommendations make catalog quality improvements visible and easy to apply.",
+    },
+    {
+      src: "/images/iungo/organizer-variations-hq.png",
+      alt: "Iungo Organizer product variation workflow with colors, sizes and product imagery",
       caption: "The design system extends from high-level dashboards to dense product configuration.",
     },
   ],
