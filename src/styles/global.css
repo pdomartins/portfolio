@@ -379,7 +379,7 @@ p {
   content: "";
   position: absolute;
   top: 0;
-  right: -8rem;
+  right: clamp(1rem, 6vw, 5rem);
   width: min(42vw, 34rem);
   height: min(42vw, 34rem);
   border: 1px solid color-mix(in srgb, var(--mark) 28%, var(--line));
