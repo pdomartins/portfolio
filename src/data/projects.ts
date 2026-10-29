@@ -223,15 +223,9 @@ const silaPayProject: Project = {
       ratio: "4 / 3",
     },
     {
-      src: "/images/sila-pay/onboarding.png",
-      alt: "Sila Pay mobile onboarding screen with secure payment message",
-      caption: "A more secure gateway, expressed through a distinct visual and interaction language.",
-      ratio: "1179 / 2556",
-    },
-    {
       src: "/images/sila-pay/signup.png",
       alt: "Sila Pay account creation screen with generative gradient visual",
-      caption: "Acquisition and account creation with the same visual system as the core product.",
+      caption: "Account creation extends the same visual system into the first product touchpoint.",
       ratio: "16 / 9",
     },
     {

@@ -1027,23 +1027,28 @@ p {
     gap: var(--space-5);
   }
 
-  .project-sila-pay .gallery figure:nth-child(1),
-  .project-sila-pay .gallery figure:nth-child(5) {
-    grid-column: span 8;
+  .project-sila-pay .gallery figure:nth-child(1) {
+    grid-column: 1 / -1;
   }
 
-  .project-sila-pay .gallery figure:nth-child(2),
-  .project-sila-pay .gallery figure:nth-child(6) {
-    grid-column: span 4;
+  .project-sila-pay .gallery figure:nth-child(2) {
+    grid-column: span 7;
   }
 
-  .project-sila-pay .gallery figure:nth-child(3),
-  .project-sila-pay .gallery figure:nth-child(7) {
+  .project-sila-pay .gallery figure:nth-child(3) {
     grid-column: span 5;
   }
 
   .project-sila-pay .gallery figure:nth-child(4) {
-    grid-column: span 7;
+    grid-column: span 8;
+  }
+
+  .project-sila-pay .gallery figure:nth-child(5) {
+    grid-column: span 4;
+  }
+
+  .project-sila-pay .gallery figure:nth-child(6) {
+    grid-column: span 5;
   }
 }
 
@@ -1075,11 +1080,11 @@ p {
   color: var(--fg-muted);
 }
 
-.project-sila-pay .gallery figure:nth-child(n + 6) .media {
+.project-sila-pay .gallery figure:nth-child(n + 5) .media {
   background: #0d0d10;
 }
 
-.project-sila-pay .gallery figure:nth-child(n + 6) .media img {
+.project-sila-pay .gallery figure:nth-child(n + 5) .media img {
   object-fit: contain;
 }
 
@@ -1126,11 +1131,11 @@ p {
   }
 
   .sila-inline-media-wide .media {
-    width: 78%;
+    width: 100%;
   }
 
   .sila-inline-media-tall .media {
-    width: min(34rem, 64%);
+    width: min(48rem, 88%);
     justify-self: end;
   }
 

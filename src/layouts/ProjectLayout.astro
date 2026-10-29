@@ -18,8 +18,8 @@ const meta = visibleMeta(project.meta);
 const indexLabel = formatIndex(index);
 const gallery = project.gallery ?? [];
 const isSilaPay = project.slug === "sila-pay";
-const inlineSilaMedia = isSilaPay ? [gallery[1], gallery[4], gallery[8]].filter(Boolean) : [];
-const finalGallery = isSilaPay ? gallery.filter((_, index) => ![1, 4, 8].includes(index)) : gallery;
+const inlineSilaMedia = isSilaPay ? [gallery[1], gallery[4], gallery[7]].filter(Boolean) : [];
+const finalGallery = isSilaPay ? gallery.filter((_, index) => ![1, 4, 7].includes(index)) : gallery;
 ---
 
 <article class:list={["project-page", `project-${project.slug}`]}>
