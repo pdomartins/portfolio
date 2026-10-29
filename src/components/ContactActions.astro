@@ -37,6 +37,7 @@ const whatsapp = "https://wa.me/5511994424041?text=Ol%C3%A1%2C%20Pedro!";
     display: grid;
     gap: 0.7rem;
     margin-top: var(--space-6);
+    width: min(var(--content), calc(100vw - (var(--gutter) * 2)));
   }
 
   .contact-action {
@@ -101,18 +102,13 @@ const whatsapp = "https://wa.me/5511994424041?text=Ol%C3%A1%2C%20Pedro!";
 
   .contact-action-copy strong {
     font-family: var(--font-sans);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     font-size: clamp(1.05rem, 1.45vw, 1.3rem);
     font-weight: 600;
     letter-spacing: -0.025em;
   }
 
   .contact-action-copy small {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    overflow-wrap: anywhere;
     color: var(--fg-muted);
     font-size: 0.82rem;
   }
@@ -141,6 +137,13 @@ const whatsapp = "https://wa.me/5511994424041?text=Ol%C3%A1%2C%20Pedro!";
   @media (min-width: 48rem) {
     .contact-actions {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 47.99rem) {
+    .contact-actions {
+      width: 100%;
+      grid-template-columns: 1fr;
     }
   }
 </style>
