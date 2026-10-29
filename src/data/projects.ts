@@ -383,6 +383,63 @@ const vaptProject: Project = {
   },
 };
 
+const dexcoProject: Project = {
+  slug: "sustainability",
+  title: "Dexco",
+  descriptor: "Service design for a sustainability strategy",
+  image: {
+    src: "/images/dexco/cover.jpg",
+    alt: "Dexco 2025 sustainability strategy presented on a mobile interface",
+    caption: "A strategic roadmap for a more sustainable and responsible future.",
+  },
+  gallery: [
+    {
+      src: "/images/dexco/challenge.jpg",
+      alt: "Dexco sustainability strategy challenge, goals and success measures",
+      caption: "Turning sustainability from a broad ambition into an actionable, company-wide strategy.",
+      ratio: "3200 / 1800",
+    },
+    {
+      src: "/images/dexco/service-blueprint.jpg",
+      alt: "Dexco customer journey map and service design blueprint across brands and service moments",
+      caption: "A service design view connecting inspiration, discovery, selection, purchase, use and after-sales support.",
+      ratio: "3200 / 1800",
+    },
+  ],
+  meta: {
+    role: "Consultant, Strategic Designer",
+    timeline: "8 months",
+    team: "Business partners, consultants, executives and CEO",
+    scope: "Service design, strategic design, sustainability strategy and co-design",
+  },
+  introduction: {
+    placeholder: false,
+    text: "A service design-led sustainability strategy for Dexco, created to connect ESG principles to the realities of business operations, customer journeys and company-wide accountability.",
+  },
+  sections: {
+    context: {
+      placeholder: false,
+      text: "Dexco needed to move sustainability from a set of commitments into a practical strategy that could create business value. The challenge was not only to define what a more responsible future should look like, but to understand how that ambition could become part of everyday decisions across brands, operations and customer experiences.\n\nThe guiding question was: how might we design a holistic sustainability strategy for Dexco that integrates ESG principles into core operations? The work brought together business partners, consultants, executives and the CEO around a shared direction.",
+    },
+    approach: {
+      placeholder: false,
+      text: "The work used Service Design as a way to connect strategic ambition with the lived reality of people, teams and organizations. We mapped the customer journey across inspiration, discovery, selection, purchase, use and repair or service, making visible the moments where sustainability could influence behavior, value and trust.\n\nThe journey map connected Dexco and its portfolio of brands — Deca, Portinari, Hydra, Duratex, Ceusa and Durafloor — with the service moments surrounding the customer. This helped the strategy move beyond isolated initiatives toward a system of coordinated experiences, operational responsibilities and opportunities for action.",
+    },
+    decisions: {
+      placeholder: false,
+      text: "The central design decision was to frame sustainability as a service ecosystem rather than a communications layer. That meant linking the frontstage experience — what customers see, choose and use — to the backstage capabilities, policies, partnerships and operational decisions required to deliver on the promise.\n\nCo-design with Symnetics and Dexco created a shared language for prioritization and accountability. The strategy was shaped as an actionable roadmap for company-wide engagement, with clear connections between ESG principles, business value, strategic goals and employee adoption.",
+    },
+    visuals: {
+      placeholder: false,
+      text: "The visual artifacts show the strategy at three levels: the future-facing narrative, the challenge and measurement framework, and the service blueprint that translates the strategy into a customer-centered system.\n\nThe final journey map is especially important because it makes the invisible structure of the service visible: the brands, the moments of decision, the customer needs and the opportunities for Dexco to create a more responsible experience across the full lifecycle.",
+    },
+    outcomes: {
+      placeholder: false,
+      text: "The outcome was a strategic roadmap designed to embed ESG principles into core operations and create the conditions for company-wide engagement and accountability. Service Design gave the strategy a practical backbone: a way to connect customer value, internal adoption and business performance.\n\nSuccess was framed through ESG Performance Score improvements, Strategic Goal Adoption Rate and Employee Engagement Metrics. Together, these measures created a view of sustainability that could be tracked not only as intention, but as integration, adoption and business value.",
+    },
+  },
+};
+
 const daycovalProject: Project = {
   slug: "banking-app",
   title: "Banco Daycoval",
@@ -532,11 +589,7 @@ export const projects: Project[] = [
   daycovalProject,
   nexaProject,
   vaptProject,
-  createProject({
-    slug: "sustainability",
-    title: "Dexco",
-    descriptor: "Sustainability strategy",
-  }),
+  dexcoProject,
   createProject({
     slug: "mobility-app",
     title: "SPTrans",
