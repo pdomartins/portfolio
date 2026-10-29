@@ -155,6 +155,66 @@ const iungoAiSuite: Project = {
   },
 };
 
+const daycovalProject: Project = {
+  slug: "banking-app",
+  title: "Banco Daycoval",
+  descriptor: "Banking app redesign",
+  image: {
+    src: "/images/daycoval/page-10.png",
+    alt: "Banco Daycoval mobile banking app redesign shown on a tilted smartphone",
+    caption: "A more focused banking experience built around clarity, control, and everyday action.",
+  },
+  gallery: [
+    {
+      src: "/images/daycoval/page-11.png",
+      alt: "Banco Daycoval mobile banking interface screens",
+      caption: "A visual system for onboarding, the home dashboard, login, and cards.",
+    },
+    {
+      src: "/images/daycoval/page-09.png",
+      alt: "Banco Daycoval research flow and app information architecture",
+      caption: "From research findings to a clearer information architecture and task flow.",
+    },
+    {
+      src: "/images/daycoval/page-12.png",
+      alt: "Banco Daycoval redesign key results",
+      caption: "The redesign reduced friction in core banking tasks and improved engagement.",
+    },
+  ],
+  meta: {
+    role: "Product Designer",
+    timeline: "6 months",
+    team: "Product Owner, developers, bank executives, AI specialists",
+    scope: "Discovery, UX strategy, interaction design, UI and prototyping",
+  },
+  introduction: {
+    placeholder: false,
+    text: "A redesign of Banco Daycoval's mobile banking experience focused on simplifying the user journey, improving financial comprehension, and making everyday banking feel more modern and intuitive.",
+  },
+  sections: {
+    context: {
+      placeholder: false,
+      text: "The existing app made important financial tasks harder than they needed to be. Information was fragmented across screens, core actions required too many steps, and technical language created uncertainty at moments that demanded confidence.\n\nThe challenge was to redesign the experience without losing the sense of security expected from a banking product: make the app easier to navigate, help people understand their financial situation, and create a more contemporary foundation for future features.",
+    },
+    approach: {
+      placeholder: false,
+      text: "The discovery phase combined qualitative and quantitative methods: user interviews and surveys, task analysis of transfers, account management and investments, and benchmarking against competitor banking apps and financial chatbots.\n\nThe findings were organized into a journey from Discover to Define, Customize, Track, and Reflect. This made the gaps visible beyond individual screens: users needed guidance for complex tasks, faster access to information, more natural interactions, proactive feedback, and a simple way to understand progress.",
+    },
+    decisions: {
+      placeholder: false,
+      text: "The redesign centered the experience around a more useful home dashboard, clear financial summaries, and direct access to core actions. Navigation was simplified so the most important tasks could be completed with fewer decisions and less cognitive load.\n\nThe interface also introduced space for conversational support and more contextual guidance. Instead of forcing people through rigid forms, the product could help them find the right path while keeping control, privacy, and transparency visible throughout the journey.",
+    },
+    visuals: {
+      placeholder: false,
+      text: "The visual direction balances a confident banking palette with a lighter, more approachable interface. Large balance and activity blocks establish hierarchy at a glance, while compact action patterns make transfers, cards, and account management easier to reach.\n\nThe final screens connect onboarding, the home dashboard, cards, transactions, and guided support into one coherent system rather than a collection of disconnected banking features.",
+    },
+    outcomes: {
+      placeholder: false,
+      text: "The redesign reduced task completion time by 35% and increased user engagement by 25% measured through DAU/MAU. The minimum path for a core task was reduced from 8 screens to 3, creating a measurable improvement in the new user journey.\n\nThese results supported a clearer product direction: fewer barriers at the entry point, faster access to essential actions, and a banking experience that helps people act with more confidence.",
+    },
+  },
+};
+
 export const projects: Project[] = [
   iungoAiSuite,
   createProject({
@@ -162,11 +222,7 @@ export const projects: Project[] = [
     title: "Sila Pay",
     descriptor: "Fintech product experiences",
   }),
-  createProject({
-    slug: "banking-app",
-    title: "Banco Daycoval",
-    descriptor: "Banking app redesign",
-  }),
+  daycovalProject,
   createProject({
     slug: "onboarding",
     title: "Nexa Resources",
