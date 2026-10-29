@@ -205,7 +205,7 @@ export const about = {
   ] satisfies Award[],
   contact: {
     headline: "Have a complex problem to solve?",
-    text: "I’m always interested in thoughtful conversations about digital products, design strategy, and emerging technology.",
+    text: "I design and shape digital products, services, and AI experiences that connect people’s needs with business momentum.",
     email: "pdomartinsdesign@gmail.com",
     linkedin: "https://www.linkedin.com/in/pdomartins/",
   },
