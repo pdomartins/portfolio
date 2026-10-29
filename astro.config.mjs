@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-import vercel from "@astrojs/vercel";
 
 /**
  * Canonical URL for SEO and social cards.
@@ -20,9 +19,5 @@ const site = resolveSite() || "https://www.martinspedro.com";
 
 export default defineConfig({
   ...(site ? { site } : {}),
-  output: "server",
-  adapter: vercel({
-    webAnalytics: { enabled: true },
-  }),
   compressHTML: true,
 });
