@@ -1028,20 +1028,17 @@ p {
   }
 
   .project-sila-pay .gallery figure:nth-child(1),
-  .project-sila-pay .gallery figure:nth-child(5),
-  .project-sila-pay .gallery figure:nth-child(8) {
+  .project-sila-pay .gallery figure:nth-child(5) {
     grid-column: span 8;
   }
 
   .project-sila-pay .gallery figure:nth-child(2),
-  .project-sila-pay .gallery figure:nth-child(6),
-  .project-sila-pay .gallery figure:nth-child(9) {
+  .project-sila-pay .gallery figure:nth-child(6) {
     grid-column: span 4;
   }
 
   .project-sila-pay .gallery figure:nth-child(3),
-  .project-sila-pay .gallery figure:nth-child(7),
-  .project-sila-pay .gallery figure:nth-child(10) {
+  .project-sila-pay .gallery figure:nth-child(7) {
     grid-column: span 5;
   }
 
@@ -1078,12 +1075,73 @@ p {
   color: var(--fg-muted);
 }
 
-.project-sila-pay .gallery figure:nth-child(n + 8) .media {
+.project-sila-pay .gallery figure:nth-child(n + 6) .media {
   background: #0d0d10;
 }
 
-.project-sila-pay .gallery figure:nth-child(n + 8) .media img {
+.project-sila-pay .gallery figure:nth-child(n + 6) .media img {
   object-fit: contain;
+}
+
+.sila-inline-media {
+  margin-block: var(--space-5) var(--space-7);
+  padding: 0;
+}
+
+.sila-inline-media .media {
+  border-color: #2d2d35;
+  background: #0d0d10;
+}
+
+.sila-inline-media figcaption {
+  max-width: 42rem;
+  margin-top: 0.55rem;
+  color: var(--fg-muted);
+  font-size: var(--text-sm);
+}
+
+.sila-inline-media-art .media img {
+  object-fit: contain;
+}
+
+.project-sila-pay .project-metric p {
+  color: rgba(244, 245, 247, 0.78);
+  font-size: clamp(1.05rem, 1.4vw, 1.35rem);
+  font-weight: 550;
+  line-height: 1.2;
+}
+
+@media (min-width: 48rem) {
+  .sila-inline-media {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 0.34fr) minmax(0, 1.66fr);
+    column-gap: clamp(2rem, 6vw, 7rem);
+    align-items: end;
+  }
+
+  .sila-inline-media .media,
+  .sila-inline-media figcaption {
+    grid-column: 2;
+  }
+
+  .sila-inline-media-wide .media {
+    width: 78%;
+  }
+
+  .sila-inline-media-tall .media {
+    width: min(34rem, 64%);
+    justify-self: end;
+  }
+
+  .sila-inline-media-art .media {
+    width: min(28rem, 52%);
+    justify-self: start;
+  }
+
+  .sila-inline-media-art {
+    min-height: 18rem;
+  }
 }
 
 .project-nav {

@@ -17,6 +17,9 @@ const { project, index, previous, next } = Astro.props;
 const meta = visibleMeta(project.meta);
 const indexLabel = formatIndex(index);
 const gallery = project.gallery ?? [];
+const isSilaPay = project.slug === "sila-pay";
+const inlineSilaMedia = isSilaPay ? [gallery[1], gallery[4], gallery[8]].filter(Boolean) : [];
+const finalGallery = isSilaPay ? gallery.filter((_, index) => ![1, 4, 8].includes(index)) : gallery;
 ---
 
 <article class:list={["project-page", `project-${project.slug}`]}>
@@ -59,15 +62,36 @@ const gallery = project.gallery ?? [];
       <Copy copy={project.sections.context} />
     </section>
 
+    {isSilaPay && inlineSilaMedia[0] && (
+      <figure class="sila-inline-media sila-inline-media-wide">
+        <PlaceholderMedia label={project.title} image={inlineSilaMedia[0]} />
+        {inlineSilaMedia[0].caption && <figcaption>{inlineSilaMedia[0].caption}</figcaption>}
+      </figure>
+    )}
+
     <section class="case-section" aria-labelledby="approach-title">
       <h2 id="approach-title">Approach and process</h2>
       <Copy copy={project.sections.approach} />
     </section>
 
+    {isSilaPay && inlineSilaMedia[1] && (
+      <figure class="sila-inline-media sila-inline-media-tall">
+        <PlaceholderMedia label={project.title} image={inlineSilaMedia[1]} />
+        {inlineSilaMedia[1].caption && <figcaption>{inlineSilaMedia[1].caption}</figcaption>}
+      </figure>
+    )}
+
     <section class="case-section" aria-labelledby="decisions-title">
       <h2 id="decisions-title">Key design decisions</h2>
       <Copy copy={project.sections.decisions} />
     </section>
+
+    {isSilaPay && inlineSilaMedia[2] && (
+      <figure class="sila-inline-media sila-inline-media-art">
+        <PlaceholderMedia label={project.title} image={inlineSilaMedia[2]} />
+        {inlineSilaMedia[2].caption && <figcaption>{inlineSilaMedia[2].caption}</figcaption>}
+      </figure>
+    )}
 
     <section class="case-section has-media" aria-labelledby="visuals-title">
       <div class="case-copy">
@@ -77,9 +101,9 @@ const gallery = project.gallery ?? [];
       {
         gallery.length > 0 ? (
           <div class="gallery">
-            {gallery.map((image) => (
+            {finalGallery.map((image) => (
               <figure>
-                <PlaceholderMedia label={project.title} ratio="16 / 10" image={image} />
+                <PlaceholderMedia label={project.title} ratio={image.ratio ?? "16 / 10"} image={image} />
                 {image.caption && <figcaption>{image.caption}</figcaption>}
               </figure>
             ))}

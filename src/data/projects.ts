@@ -16,6 +16,7 @@ export interface ProjectImage {
   src: string;
   alt: string;
   caption?: string;
+  ratio?: string;
 }
 
 export interface ProjectMeta {
@@ -194,57 +195,68 @@ const silaPayProject: Project = {
     src: "/images/sila-pay/multi-device.jpg",
     alt: "Sila Pay payment experiences shown across desktop, laptop and mobile devices",
     caption: "One payment ecosystem, designed to move across screens, markets and moments.",
+    ratio: "4000 / 2667",
   },
   gallery: [
     {
       src: "/images/sila-pay/desktop-dashboard.png",
       alt: "Sila Pay desktop dashboard with payment balance, transaction analytics and history",
       caption: "A responsive operations dashboard for balances, payment flows and transaction intelligence.",
+      ratio: "16 / 9",
     },
     {
       src: "/images/sila-pay/mobile-dashboard.jpg",
       alt: "Sila Pay mobile dashboard with balance, payment shortcuts and recent transactions",
       caption: "The same financial language carried into a compact mobile experience.",
+      ratio: "4300 / 2865",
     },
     {
       src: "/images/sila-pay/laptop-dashboard.jpg",
       alt: "Sila Pay laptop dashboard shown in an editorial product mockup",
       caption: "A cross-device system for merchants who need to see and act on payment activity anywhere.",
+      ratio: "6000 / 4000",
     },
     {
       src: "/images/sila-pay/mobile-credit.png",
       alt: "Sila Pay mobile screens for balance, credit payment and transactions",
       caption: "Banking-like moments designed around confidence, hierarchy and action.",
+      ratio: "4 / 3",
     },
     {
       src: "/images/sila-pay/onboarding.png",
       alt: "Sila Pay mobile onboarding screen with secure payment message",
       caption: "A more secure gateway, expressed through a distinct visual and interaction language.",
+      ratio: "1179 / 2556",
     },
     {
       src: "/images/sila-pay/signup.png",
       alt: "Sila Pay account creation screen with generative gradient visual",
       caption: "Acquisition and account creation with the same visual system as the core product.",
+      ratio: "16 / 9",
     },
     {
       src: "/images/sila-pay/mobile-onboarding.jpg",
       alt: "Sila Pay mobile dashboard and onboarding screens presented together",
       caption: "From first touch to daily financial operations, the experience stays coherent.",
+      ratio: "4300 / 2865",
     },
     {
       src: "/images/sila-pay/shape-prism.png",
       alt: "Iridescent prism visual from the Sila Pay visual language",
       caption: "Abstract visual assets gave the fintech system a more expressive edge.",
+      ratio: "572 / 475",
     },
     {
       src: "/images/sila-pay/shape-wave.png",
       alt: "Abstract purple wave visual from the Sila Pay visual language",
       caption: "A visual vocabulary built for motion, trust and technology.",
+      ratio: "3480 / 3294",
     },
     {
       src: "/images/sila-pay/shape-star.png",
       alt: "Abstract iridescent star visual from the Sila Pay visual language",
       caption: "Identity elements used as atmosphere, emphasis and product memory.",
+      ratio: "4096 / 4096",
     },
   ],
   metrics: [
