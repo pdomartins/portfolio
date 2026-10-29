@@ -110,47 +110,56 @@ const iungoAiSuite: Project = {
     src: "/images/iungo/identity-icons.png",
     alt: "Glossy glass icons representing the Iungo AI Suite product ecosystem",
     caption: "A visual identity for a suite of connected AI products.",
+    ratio: "1800 / 1013",
   },
   gallery: [
     {
       src: "/images/iungo/engagement-dashboard-hq.png",
       alt: "Iungo Engagement dashboard showing revenue, conversion, transactions and campaign performance",
       caption: "Engagement connects campaigns, behavior and commercial outcomes in one operating view.",
+      ratio: "3840 / 3304",
     },
     {
       src: "/images/iungo/organizer-search-hq.png",
       alt: "Iungo Organizer search dashboard showing offer distribution, publishing status and product data",
       caption: "Organizer turns catalog operations into an observable, actionable system.",
+      ratio: "2420 / 1354",
     },
     {
       src: "/images/iungo/organizer-products-hq.png",
       alt: "Iungo Organizer product catalog screen with SKUs, channels and publication status",
       caption: "A scalable catalog workspace for products, SKUs, channels and publication quality.",
+      ratio: "2994 / 1686",
     },
     {
       src: "/images/iungo/identity-dashboard.png",
       alt: "Glossy glass icons arranged as the Iungo product identity system",
       caption: "A modular identity system that gives each capability a recognizable role.",
+      ratio: "1 / 1",
     },
     {
       src: "/images/iungo/organizer-product-edit-hq.png",
       alt: "Iungo Organizer product editing workflow with structured content and AI assistance",
       caption: "AI-assisted product enrichment, designed as a guided workflow rather than a black box.",
+      ratio: "2784 / 1574",
     },
     {
       src: "/images/iungo/organizer-rule-hq.png",
       alt: "Iungo Organizer rule configuration workflow with email, SMS and WhatsApp channels",
       caption: "Operational complexity made legible across commerce channels.",
+      ratio: "2598 / 1460",
     },
     {
       src: "/images/iungo/organizer-blocklist-hq.png",
       alt: "Iungo Organizer blocklist dashboard with product restrictions and status controls",
       caption: "Recommendations make catalog quality improvements visible and easy to apply.",
+      ratio: "2954 / 1664",
     },
     {
       src: "/images/iungo/organizer-variations-hq.png",
       alt: "Iungo Organizer product variation workflow with colors, sizes and product imagery",
       caption: "The design system extends from high-level dashboards to dense product configuration.",
+      ratio: "2818 / 1624",
     },
   ],
   meta: {

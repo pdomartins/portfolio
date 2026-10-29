@@ -51,7 +51,7 @@ const finalGallery = isSilaPay ? gallery.filter((_, index) => ![1, 4, 7].include
         label={project.title}
         indexLabel={indexLabel}
         tone="2"
-        ratio="16 / 9"
+        ratio={project.image?.ratio ?? "16 / 9"}
         image={project.image}
       />
       {project.image?.caption && <figcaption>{project.image.caption}</figcaption>}
