@@ -285,11 +285,6 @@ export const projects: Project[] = [
   daycovalProject,
   nexaProject,
   createProject({
-    slug: "onboarding",
-    title: "Nexa Resources",
-    descriptor: "Employee onboarding experience",
-  }),
-  createProject({
     slug: "design-system",
     title: "Vapt",
     descriptor: "Design system",
