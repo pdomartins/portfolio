@@ -313,6 +313,18 @@ const aboutCurrent = pathname === "/about";
     "Back to the work": "Voltar aos trabalhos",
   };
 
+  // Copy blocks are rendered as separate paragraphs. Expand translated blocks
+  // into paragraph-level entries so long case-study sections translate too.
+  const translationLookup: Record<string, string> = { ...translations };
+  Object.entries(translations).forEach(([source, translated]) => {
+    const sourceParts = source.split(/\n\n+/).map((part) => part.trim()).filter(Boolean);
+    const translatedParts = translated.split(/\n\n+/).map((part) => part.trim()).filter(Boolean);
+    if (sourceParts.length < 2 || sourceParts.length !== translatedParts.length) return;
+    sourceParts.forEach((part, index) => {
+      if (!translationLookup[part]) translationLookup[part] = translatedParts[index];
+    });
+  });
+
   const originalText = new WeakMap<Text, string>();
 
   function setLanguage(language: "en" | "pt") {
@@ -329,7 +341,7 @@ const aboutCurrent = pathname === "/about";
       const source = originalText.get(node) || "";
       const original = source.trim();
       if (!original) return;
-      const translated = translations[original];
+      const translated = translationLookup[original];
       if (translated) node.textContent = language === "pt" ? source.replace(original, translated) : source;
     });
     try { localStorage.setItem("language", language); } catch (error) {}
