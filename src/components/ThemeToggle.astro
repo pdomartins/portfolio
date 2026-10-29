@@ -70,7 +70,7 @@
   });
 
   document.addEventListener("astro:page-load", () => {
-    applyTheme(currentTheme(), false);
+    applyTheme(readStoredTheme() ?? currentTheme(), false);
   });
 
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {

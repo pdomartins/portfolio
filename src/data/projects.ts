@@ -192,12 +192,18 @@ const silaPayProject: Project = {
   title: "Sila Pay",
   descriptor: "A multi-currency payment gateway for digital commerce",
   image: {
-    src: "/images/sila-pay/multi-device.jpg",
-    alt: "Sila Pay payment experiences shown across desktop, laptop and mobile devices",
-    caption: "One payment ecosystem, designed to move across screens, markets and moments.",
-    ratio: "4000 / 2667",
+    src: "/images/sila-pay/cover-final.jpg",
+    alt: "Sila Pay banking and payment experiences presented across two mobile devices",
+    caption: "A payment ecosystem designed to carry trust, clarity, and action across every screen.",
+    ratio: "3 / 2",
   },
   gallery: [
+    {
+      src: "/images/sila-pay/multi-device.jpg",
+      alt: "Sila Pay payment experiences shown across desktop, laptop and mobile devices",
+      caption: "One payment ecosystem, designed to move across screens, markets, and moments.",
+      ratio: "4000 / 2667",
+    },
     {
       src: "/images/sila-pay/desktop-dashboard.png",
       alt: "Sila Pay desktop dashboard with payment balance, transaction analytics and history",

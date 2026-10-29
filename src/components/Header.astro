@@ -428,9 +428,17 @@ const aboutCurrent = pathname === "/about";
     setLanguage(document.documentElement.dataset.language === "pt" ? "en" : "pt");
   });
 
-  try {
-    if (localStorage.getItem("language") === "pt") setLanguage("pt");
-  } catch (error) {}
+  function restoreLanguage() {
+    try {
+      const stored = localStorage.getItem("language");
+      setLanguage(stored === "pt" ? "pt" : "en");
+    } catch (error) {
+      setLanguage("en");
+    }
+  }
+
+  restoreLanguage();
+  document.addEventListener("astro:page-load", restoreLanguage);
 </script>
 
 <style>
