@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f4f1eb"/>
+  <circle cx="960" cy="315" r="240" fill="none" stroke="#2d5b4d" stroke-opacity=".35"/>
+  <circle cx="960" cy="315" r="120" fill="none" stroke="#d9d2c6"/>
+  <circle cx="960" cy="315" r="32" fill="#2d5b4d"/>
+  <text x="90" y="170" fill="#1d1c1a" font-family="Georgia, serif" font-size="72">Pedro Martins</text>
+  <text x="94" y="245" fill="#4d4a45" font-family="Arial, sans-serif" font-size="28" letter-spacing="3">SENIOR PRODUCT DESIGNER</text>
+  <text x="94" y="355" fill="#1d1c1a" font-family="Georgia, serif" font-size="48">UX/UI · Product strategy · AI</text>
+  <text x="94" y="425" fill="#4d4a45" font-family="Arial, sans-serif" font-size="25">Digital products, services, and systems.</text>
+</svg>

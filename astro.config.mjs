@@ -15,7 +15,7 @@ function resolveSite() {
   return undefined;
 }
 
-const site = resolveSite();
+const site = resolveSite() || "https://www.martinspedro.com";
 
 export default defineConfig({
   ...(site ? { site } : {}),

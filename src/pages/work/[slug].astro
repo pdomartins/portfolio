@@ -10,6 +10,24 @@ export function getStaticPaths() {
 const { project, index, previous, next } = Astro.props as ProjectRoute;
 ---
 
-<BaseLayout title={project.title} description={`${project.title}. ${project.descriptor}.`} ogType="article">
+<BaseLayout
+  title={`${project.title} — ${project.descriptor}`}
+  description={`${project.title}: ${project.descriptor}. A Senior Product Designer case study covering strategy, UX/UI, systems, and delivery.`}
+  ogType="article"
+  image={project.image?.src}
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    headline: project.descriptor,
+    description: `${project.title}: ${project.descriptor}.`,
+    url: Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined,
+    image: project.image?.src ? (Astro.site ? new URL(project.image.src, Astro.site).href : project.image.src) : undefined,
+    author: { "@type": "Person", name: "Pedro Martins", url: "https://www.martinspedro.com/about" },
+    creator: { "@type": "Person", name: "Pedro Martins" },
+    inLanguage: "en",
+    keywords: ["UX design", "UI design", "product strategy", "service design", "design system", "digital product"],
+  }}
+>
   <ProjectLayout project={project} index={index} previous={previous} next={next} />
 </BaseLayout>

@@ -16,12 +16,14 @@ const jsonLd: Record<string, unknown> = {
   jobTitle: site.role,
   description: site.description,
   sameAs: site.linkedin ? [site.linkedin] : [],
+  url: site.url,
+  knowsAbout: ["Product strategy", "UX/UI design", "AI-enabled products", "Service design", "Fintech", "Design systems"],
 };
 
 if (Astro.site) jsonLd.url = Astro.site.href;
 ---
 
-<BaseLayout title={site.name} description={site.description} jsonLd={jsonLd}>
+<BaseLayout title={site.name} description={site.description} jsonLd={jsonLd} image="/og-image.svg">
   <PageContainer>
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-grid">

@@ -7,7 +7,7 @@ export const site = {
   name: "Pedro Martins",
   role: "Senior Product Designer",
   description:
-    "I connect strategy, design, and technology to create digital products that make complex things feel simple.",
+    "Senior Product Designer in São Paulo, working worldwide across product strategy, UX/UI design, AI-enabled products, fintech, SaaS, and complex digital services.",
   locale: "en",
   availability: {
     visible: true,
@@ -15,6 +15,7 @@ export const site = {
   },
   email: "",
   linkedin: "https://www.linkedin.com/in/pdomartins/",
+  url: "https://www.martinspedro.com",
 };
 
 export type Site = typeof site;

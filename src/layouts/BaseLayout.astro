@@ -12,11 +12,13 @@ interface Props {
   description: string;
   ogType?: "website" | "article";
   jsonLd?: Record<string, unknown>;
+  image?: string;
 }
 
-const { title, description, ogType = "website", jsonLd } = Astro.props;
-const fullTitle = title === site.name ? `${site.name} · ${site.role}` : `${title} · ${site.name}`;
+const { title, description, ogType = "website", jsonLd, image = "/og-image.svg" } = Astro.props;
+const fullTitle = title === site.name ? `${site.name} · UX/UI, Product Strategy & AI` : `${title} · ${site.name}`;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const imageUrl = Astro.site ? new URL(image, Astro.site).href : image;
 ---
 
 <!doctype html>
@@ -41,15 +43,21 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : un
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <meta name="author" content={site.name} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     {canonical && <link rel="canonical" href={canonical} />}
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
+    <meta property="og:site_name" content={site.name} />
     <meta property="og:type" content={ogType} />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="pt_BR" />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:alt" content={`${title} — ${site.name}`} />
     {canonical && <meta property="og:url" content={canonical} />}
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="generator" content={Astro.generator} />
     <ClientRouter />

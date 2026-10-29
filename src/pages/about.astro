@@ -8,7 +8,24 @@ const description =
   "Senior Product Designer with 9+ years across digital products, enterprise SaaS, fintech, e-commerce, and strategic innovation.";
 ---
 
-<BaseLayout title="About" description={description}>
+<BaseLayout
+  title="About Pedro Martins | Senior Product Designer"
+  description={description}
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    name: "About Pedro Martins",
+    description,
+    mainEntity: {
+      "@type": "Person",
+      name: "Pedro Martins",
+      jobTitle: "Senior Product Designer",
+      url: "https://www.martinspedro.com/about",
+      sameAs: ["https://www.linkedin.com/in/pdomartins/"],
+      knowsAbout: ["Product strategy", "UX/UI design", "Service design", "AI-enabled products", "Design systems"],
+    },
+  }}
+>
   <PageContainer>
     <article class="about-page">
       <header class="about-opening">
