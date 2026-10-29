@@ -369,9 +369,9 @@ const dexcoProject: Project = {
   title: "Dexco",
   descriptor: "Service design for a sustainability strategy",
   image: {
-    src: "/images/dexco/cover.jpg",
-    alt: "Dexco 2025 sustainability strategy presented on a mobile interface",
-    caption: "A strategic roadmap for a more sustainable and responsible future.",
+    src: "/images/dexco/cover.png",
+    alt: "Dexco sustainability strategy showing three major commitments across construction, wellbeing and positive carbon balance",
+    caption: "Three commitments, one sustainability strategy: making journeys easier, promoting wellbeing and protecting a positive carbon balance.",
   },
   gallery: [
     {
