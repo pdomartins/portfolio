@@ -306,6 +306,7 @@ const vaptProject: Project = {
   title: "Vapt",
   descriptor: "A design system for coherent digital products",
   image: {
+<<<<<<< HEAD
     src: "/images/vapt/cover.jpg",
     alt: "Vapt design system case study cover showing the brand on a mobile interface",
     caption: "Building a scalable and efficient foundation for consistent digital products.",
@@ -322,6 +323,30 @@ const vaptProject: Project = {
       alt: "Vapt visual language, colors, iconography, brand assets and product interface studies",
       caption: "From color and iconography to product interfaces, one language became a shared source of truth.",
       ratio: "2934 / 1650",
+=======
+    src: "/images/vapt/cover.png",
+    alt: "Vapt responsive website and mobile experience shown in a product mockup",
+    caption: "A digital product identity designed to make ordering simpler for people and restaurants.",
+  },
+  gallery: [
+    {
+      src: "/images/vapt/metro.png",
+      alt: "Vapt digital ordering campaign displayed on a public digital signage screen in a metro station",
+      caption: "The product language carried into the city — turning a simple promise into an unmistakable point of action.",
+      ratio: "5846 / 3855",
+    },
+    {
+      src: "/images/vapt/website.jpg",
+      alt: "Vapt website and mobile ordering experience presented on a blue background",
+      caption: "A responsive experience connecting the brand, the customer journey and the restaurant proposition.",
+      ratio: "3500 / 3050",
+    },
+    {
+      src: "/images/vapt/identity.jpg",
+      alt: "Vapt brand identity board with logo, campaign imagery, icons and digital applications",
+      caption: "A visual identity system built to move across touchpoints, from campaign communication to product UI.",
+      ratio: "3500 / 3010",
+>>>>>>> a776534 (Build portfolio case studies and Vapt project)
     },
   ],
   meta: {
