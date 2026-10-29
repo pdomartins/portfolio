@@ -21,7 +21,7 @@ const description =
       </header>
 
       <section class="about-section" id="experience" aria-labelledby="experience-title">
-        <h2 id="experience-title">Experience</h2>
+        <h2 id="experience-title"><span class="section-icon" aria-hidden="true">✦</span>Experience</h2>
         <ol class="role-list">
           {
             about.experience.map((job) => (
@@ -54,7 +54,7 @@ const description =
       </section>
 
       <section class="about-section" id="education" aria-labelledby="education-title">
-        <h2 id="education-title">Education &amp; Learning</h2>
+        <h2 id="education-title"><span class="section-icon" aria-hidden="true">◫</span>Education &amp; Learning</h2>
         <div class="study-grid">
           <div>
             <h3>Degrees</h3>
@@ -96,7 +96,7 @@ const description =
       </section>
 
       <section class="about-section" id="practice" aria-labelledby="practice-title">
-        <h2 id="practice-title">Areas of Practice</h2>
+        <h2 id="practice-title"><span class="section-icon" aria-hidden="true">✳</span>Areas of Practice</h2>
         <div class="practice-grid">
           {
             about.practice.map((group) => (
@@ -114,7 +114,7 @@ const description =
       </section>
 
       <section class="about-section" id="recognition" aria-labelledby="recognition-title">
-        <h2 id="recognition-title">Recognition</h2>
+        <h2 id="recognition-title"><span class="section-icon" aria-hidden="true">◇</span>Recognition</h2>
         <ul class="award-list">
           {
             about.awards.map((award) => (
@@ -196,7 +196,7 @@ const description =
   }
 
   .about-section {
-    padding-top: var(--space-7);
+    padding-top: clamp(3.5rem, 7vw, 6rem);
   }
 
   .about-section h2,
@@ -212,13 +212,17 @@ const description =
     line-height: 1.1;
   }
 
-  .about-section h2::before {
-    content: "";
-    display: inline-block;
-    width: 2.5rem;
-    height: 1px;
-    background: var(--mark);
-    transform: translateY(-0.18em);
+  .section-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 1.15rem;
+    height: 1.15rem;
+    color: var(--mark);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1;
+    transform: translateY(-0.1em);
   }
 
   .role-list,
@@ -343,9 +347,7 @@ const description =
 
   .study-grid > div,
   .practice-grid > div {
-    padding: 1.25rem;
-    border: 1px solid var(--line);
-    background: color-mix(in srgb, var(--bg-elevated) 68%, transparent);
+    padding-inline: 0.1rem;
   }
 
   .study-list,
