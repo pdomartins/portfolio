@@ -1,11 +1,12 @@
 ---
-import ExternalLink from "../components/ExternalLink.astro";
+import ContactActions from "../components/ContactActions.astro";
 import PageContainer from "../components/PageContainer.astro";
 import ProjectGrid from "../components/ProjectGrid.astro";
 import Section from "../components/Section.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { projects } from "../data/projects";
 import { site } from "../data/site";
+import { about } from "../data/about";
 
 const count = String(projects.length).padStart(2, "0");
 const jsonLd: Record<string, unknown> = {
@@ -47,16 +48,9 @@ if (Astro.site) jsonLd.url = Astro.site.href;
       <ProjectGrid projects={projects} />
     </Section>
 
-    <Section id="contact" variant="closing" title="Let’s work on something complex.">
-      <p>For collaborations and new work, reach out through the links below.</p>
-      {
-        (site.linkedin || site.email) && (
-          <p class="closing-links">
-            {site.linkedin && <ExternalLink href={site.linkedin}>LinkedIn</ExternalLink>}
-            {site.email && <a href={`mailto:${site.email}`}>{site.email}</a>}
-          </p>
-        )
-      }
+    <Section id="contact" variant="closing" title="Have a product, service, or idea worth moving forward?">
+      <p>For projects, collaborations, and thoughtful conversations, choose the channel that works best for you.</p>
+      <ContactActions email={about.contact.email} linkedin={about.contact.linkedin} />
     </Section>
   </PageContainer>
 </BaseLayout>

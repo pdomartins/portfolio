@@ -1,5 +1,5 @@
 ---
-import ExternalLink from "../components/ExternalLink.astro";
+import ContactActions from "../components/ContactActions.astro";
 import PageContainer from "../components/PageContainer.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { about } from "../data/about";
@@ -129,16 +129,9 @@ const description =
       </section>
 
       <section class="about-close" id="contact" aria-labelledby="about-contact-title">
-        <h2 id="about-contact-title">{about.contact.headline}</h2>
+        <h2 id="about-contact-title">Have a product, service, or idea worth moving forward?</h2>
         <p>{about.contact.text}</p>
-        <ul class="about-contact-links">
-          <li>
-            <a href={`mailto:${about.contact.email}`}>{about.contact.email}</a>
-          </li>
-          <li>
-            <ExternalLink href={about.contact.linkedin}>LinkedIn</ExternalLink>
-          </li>
-        </ul>
+        <ContactActions email={about.contact.email} linkedin={about.contact.linkedin} />
       </section>
     </article>
   </PageContainer>
@@ -424,22 +417,6 @@ const description =
   .about-close p {
     margin-top: 0.85rem;
     color: var(--fg-muted);
-  }
-
-  .about-contact-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem 1.5rem;
-    margin-top: var(--space-5);
-  }
-
-  .about-contact-links :global(a) {
-    font-family: var(--font-serif);
-    font-size: 1.25rem;
-    letter-spacing: -0.02em;
-    text-decoration: underline;
-    text-underline-offset: 0.16em;
-    overflow-wrap: anywhere;
   }
 
   @media (min-width: 48rem) {
