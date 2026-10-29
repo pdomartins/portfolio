@@ -1,0 +1,72 @@
+---
+import type { ProjectMetric } from "../data/projects";
+
+interface Props {
+  metrics: ProjectMetric[];
+}
+
+const { metrics } = Astro.props;
+---
+
+{metrics.length > 0 && (
+  <div class="project-metrics" aria-label="Key results">
+    {metrics.map((metric) => (
+      <article class="project-metric">
+        <strong>{metric.value}</strong>
+        <p>{metric.label}</p>
+      </article>
+    ))}
+  </div>
+)}
+
+<style>
+  .project-metrics {
+    display: grid;
+    gap: 0.75rem;
+    margin-block: var(--space-6) var(--space-5);
+  }
+
+  .project-metric {
+    min-height: 14rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: clamp(1.25rem, 2.5vw, 2rem);
+    background: var(--mark);
+    color: var(--bg);
+    transition: transform 280ms var(--ease), background-color 280ms var(--ease);
+  }
+
+  .project-metric:hover {
+    transform: translateY(-0.25rem);
+  }
+
+  .project-metric strong {
+    font-family: var(--font-sans);
+    font-size: clamp(3.4rem, 8vw, 6.8rem);
+    font-weight: 650;
+    letter-spacing: -0.08em;
+    line-height: 0.85;
+  }
+
+  .project-metric p {
+    max-width: 18ch;
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 1.35vw, 1.25rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.18;
+  }
+
+  @media (min-width: 48rem) {
+    .project-metrics {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .project-metric {
+      min-height: 19rem;
+    }
+  }
+</style>

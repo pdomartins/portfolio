@@ -3,6 +3,7 @@ import Copy from "../components/Copy.astro";
 import PageContainer from "../components/PageContainer.astro";
 import PlaceholderMedia from "../components/PlaceholderMedia.astro";
 import ProjectNav from "../components/ProjectNav.astro";
+import ProjectMetrics from "../components/ProjectMetrics.astro";
 import { formatIndex, visibleMeta, type Project } from "../data/projects";
 
 interface Props {
@@ -93,6 +94,7 @@ const gallery = project.gallery ?? [];
 
     <section class="case-section" aria-labelledby="outcomes-title">
       <h2 id="outcomes-title">Outcomes and learnings</h2>
+      {project.metrics && <ProjectMetrics metrics={project.metrics} />}
       <Copy copy={project.sections.outcomes} />
     </section>
   </PageContainer>

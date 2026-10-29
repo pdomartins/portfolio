@@ -25,6 +25,11 @@ export interface ProjectMeta {
   scope?: string;
 }
 
+export interface ProjectMetric {
+  value: string;
+  label: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -32,6 +37,7 @@ export interface Project {
   featured?: boolean;
   image?: ProjectImage;
   gallery?: ProjectImage[];
+  metrics?: ProjectMetric[];
   introduction: CopyBlock;
   meta: ProjectMeta;
   sections: {
@@ -175,10 +181,19 @@ const daycovalProject: Project = {
       alt: "Banco Daycoval research flow and app information architecture",
       caption: "From research findings to a clearer information architecture and task flow.",
     },
+  ],
+  metrics: [
     {
-      src: "/images/daycoval/page-12.png",
-      alt: "Banco Daycoval redesign key results",
-      caption: "The redesign reduced friction in core banking tasks and improved engagement.",
+      value: "35%",
+      label: "reduction in task completion time for key banking actions",
+    },
+    {
+      value: "25%",
+      label: "increase in user engagement measured through DAU/MAU",
+    },
+    {
+      value: "3",
+      label: "screens in the new minimum path, down from 8",
     },
   ],
   meta: {
@@ -239,6 +254,20 @@ const nexaProject: Project = {
       src: "/images/nexa/page-16.png",
       alt: "Nexa Resources design system with colors, typography, components, and iconography",
       caption: "A scalable design system connecting brand, interface, and operational clarity.",
+    },
+  ],
+  metrics: [
+    {
+      value: "4",
+      label: "hours of administrative work saved per manager, per new hire",
+    },
+    {
+      value: "65%",
+      label: "reduction in equipment wait time",
+    },
+    {
+      value: "US$1M",
+      label: "in projected productivity gains for the first year",
     },
   ],
   meta: {
