@@ -268,6 +268,23 @@ p {
   transition: border-color var(--duration) var(--ease);
 }
 
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 2.2rem;
+  padding: 0.45rem;
+}
+
+.theme-toggle svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
 .theme-toggle,
 .menu-button {
   min-height: 2.2rem;
