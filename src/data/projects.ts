@@ -215,6 +215,66 @@ const daycovalProject: Project = {
   },
 };
 
+const nexaProject: Project = {
+  slug: "onboarding",
+  title: "Nexa Resources",
+  descriptor: "Employee onboarding experience",
+  image: {
+    src: "/images/nexa/page-18.png",
+    alt: "Nexa Resources employee onboarding experience across dashboards and candidate screens",
+    caption: "A connected onboarding ecosystem for candidates, managers, and new employees.",
+  },
+  gallery: [
+    {
+      src: "/images/nexa/page-15.png",
+      alt: "Nexa Resources onboarding journey, pain points, and co-creation workshop",
+      caption: "Mapping the journey, surfacing pain points, and aligning the HR team around opportunities.",
+    },
+    {
+      src: "/images/nexa/page-17.png",
+      alt: "Nexa Resources onboarding platform dashboard",
+      caption: "A manager dashboard that makes progress, hiring activity, and onboarding status visible.",
+    },
+    {
+      src: "/images/nexa/page-16.png",
+      alt: "Nexa Resources design system with colors, typography, components, and iconography",
+      caption: "A scalable design system connecting brand, interface, and operational clarity.",
+    },
+  ],
+  meta: {
+    role: "Product Designer",
+    timeline: "6 months",
+    team: "Product Owner, Agile Coach, developers, Scrum Master, Project Manager",
+    scope: "Research, service design, UX/UI, design system, prototyping",
+  },
+  introduction: {
+    placeholder: false,
+    text: "A centralized onboarding experience designed to help Nexa Resources empower new hires from day one, improve visibility for managers, and reduce the operational friction between offer, equipment, training, and integration.",
+  },
+  sections: {
+    context: {
+      placeholder: false,
+      text: "Nexa's onboarding process was spread across disconnected platforms and manual handoffs. New employees had to navigate unclear steps, managers lacked real-time visibility, and essential equipment and training activities could become bottlenecks.\n\nThe challenge was to transform a fragmented administrative process into a supportive, measurable journey that improved new-hire engagement, productivity, and safety. The strategic context included a 37% first-year accident rate, making effective onboarding more than an HR convenience: it was an operational and safety priority.",
+    },
+    approach: {
+      placeholder: false,
+      text: "The project used a co-creation model with the HR team and an agile delivery approach. Discovery combined workshops, interviews, journey mapping, persona development, and synthesis of operational and safety pain points.\n\nThe journey was mapped across before, during, and after onboarding: selection and proposal, documentation, equipment, training, manager follow-up, integration with the team, and long-term check-ins. This exposed the moments where expectations and reality diverged, as well as the opportunities to make progress visible and actionable.",
+    },
+    decisions: {
+      placeholder: false,
+      text: "The experience was designed as an integrated system rather than a single employee-facing screen. Candidates, new employees, managers, HR, and training stakeholders each received the right level of visibility and action for their role.\n\nA central dashboard gave managers a live view of open opportunities, employees in onboarding, average time to hire, diversity indicators, and turnover. A candidate profile and progress timeline connected documents, skills, interviews, and hiring stages. The design system established a consistent foundation across the platform, from typography and color to components, icons, tags, progress bars, and forms.",
+    },
+    visuals: {
+      placeholder: false,
+      text: "The visual direction brings Nexa's industrial context into a more human and approachable digital environment. Orange becomes a clear action signal, while soft surfaces, rounded panels, progress indicators, and illustrations help reduce the intimidation of a complex operational process.\n\nThe final ecosystem connects onboarding, dashboard reporting, candidate profiles, sign-up, equipment readiness, interviews, and progress tracking in one visual language.",
+    },
+    outcomes: {
+      placeholder: false,
+      text: "The documented projections estimated 4 hours of administrative work saved per manager, per new hire, a 65% reduction in equipment wait time, and US$1M in projected productivity gains in the first year. The expected impact came from faster time-to-productivity, automated requests, and increased visibility across the onboarding process.\n\nThe project reframed onboarding as a measurable product experience: safer, more transparent, and more supportive for the people entering the organization, while giving managers and HR a clearer operational system to run.",
+    },
+  },
+};
+
 export const projects: Project[] = [
   iungoAiSuite,
   createProject({
@@ -223,6 +283,7 @@ export const projects: Project[] = [
     descriptor: "Fintech product experiences",
   }),
   daycovalProject,
+  nexaProject,
   createProject({
     slug: "onboarding",
     title: "Nexa Resources",
