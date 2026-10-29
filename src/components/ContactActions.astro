@@ -13,21 +13,21 @@ const whatsapp = "https://wa.me/5511994424041?text=Ol%C3%A1%2C%20Pedro!";
     <span class="contact-action-icon" aria-hidden="true">
       <svg viewBox="0 0 24 24"><path d="M3.5 6.5h17v11h-17z"></path><path d="m4 7 8 6 8-6"></path></svg>
     </span>
-    <span class="contact-action-copy"><strong>Start with an idea</strong><small>{email}</small></span>
+    <span class="contact-action-copy"><strong>Email me</strong><small>{email}</small></span>
     <span class="contact-action-arrow" aria-hidden="true">↗</span>
   </a>
   <a class="contact-action" href={whatsapp} target="_blank" rel="noreferrer">
     <span class="contact-action-icon" aria-hidden="true">
       <svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 19.5l1.1-4A8 8 0 1 1 20 11.5Z"></path><path d="M9 8.5c.2 1.6 1.2 3 2.7 3.8 1 .5 1.7.7 2.2.2l.7-.7"></path></svg>
     </span>
-    <span class="contact-action-copy"><strong>Let’s talk</strong><small>A quick conversation</small></span>
+    <span class="contact-action-copy"><strong>Let’s talk</strong><small>Direct message</small></span>
     <span class="contact-action-arrow" aria-hidden="true">↗</span>
   </a>
   <a class="contact-action" href={linkedin} target="_blank" rel="noreferrer">
     <span class="contact-action-icon" aria-hidden="true">
       <svg viewBox="0 0 24 24"><path d="M6 8.5V18"></path><path d="M6 5.5v.1"></path><path d="M10.5 18v-5.2a2.8 2.8 0 0 1 5.6 0V18"></path><path d="M10.5 12.5V18"></path></svg>
     </span>
-    <span class="contact-action-copy"><strong>Let’s connect</strong><small>Network, collaborate, share</small></span>
+    <span class="contact-action-copy"><strong>Let’s connect</strong><small>Network &amp; collaborate</small></span>
     <span class="contact-action-arrow" aria-hidden="true">↗</span>
   </a>
 </div>
@@ -41,12 +41,12 @@ const whatsapp = "https://wa.me/5511994424041?text=Ol%C3%A1%2C%20Pedro!";
 
   .contact-action {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.2rem;
-    min-height: 10.5rem;
-    padding: 1.15rem 1.2rem 1.2rem;
+    display: grid;
+    grid-template-columns: 2.2rem minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.85rem;
+    min-height: 5.4rem;
+    padding: 0.85rem 1rem;
     border: 1px solid var(--line);
     border-radius: 0.15rem 1.25rem 0.15rem 1.25rem;
     background: color-mix(in srgb, var(--bg-elevated) 65%, transparent);
@@ -97,12 +97,14 @@ const whatsapp = "https://wa.me/5511994424041?text=Ol%C3%A1%2C%20Pedro!";
     display: grid;
     gap: 0.12rem;
     min-width: 0;
-    margin-top: auto;
   }
 
   .contact-action-copy strong {
     font-family: var(--font-sans);
-    font-size: clamp(1.25rem, 1.8vw, 1.55rem);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: clamp(1.05rem, 1.45vw, 1.3rem);
     font-weight: 600;
     letter-spacing: -0.025em;
   }
@@ -112,7 +114,7 @@ const whatsapp = "https://wa.me/5511994424041?text=Ol%C3%A1%2C%20Pedro!";
     text-overflow: ellipsis;
     white-space: nowrap;
     color: var(--fg-muted);
-    font-size: 0.9rem;
+    font-size: 0.82rem;
   }
 
   .is-primary .contact-action-copy small {
@@ -120,15 +122,13 @@ const whatsapp = "https://wa.me/5511994424041?text=Ol%C3%A1%2C%20Pedro!";
   }
 
   .contact-action:first-child .contact-action-copy small {
-    font-size: 0.82rem;
+    font-size: 0.72rem;
     letter-spacing: -0.02em;
   }
 
   .contact-action-arrow {
-    position: absolute;
-    top: 1rem;
-    right: 1.1rem;
-    font-size: 1.45rem;
+    align-self: start;
+    font-size: 1.25rem;
     line-height: 1;
     transition: transform 260ms var(--ease);
   }
