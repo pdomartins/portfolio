@@ -371,7 +371,7 @@ p {
 
 .hero {
   position: relative;
-  padding-block: var(--space-8) var(--space-9);
+  padding-block: clamp(4rem, 7vw, 6rem) var(--space-7);
   overflow: hidden;
 }
 
@@ -472,7 +472,7 @@ p {
 .hero-card {
   position: relative;
   z-index: 1;
-  min-height: 24rem;
+  min-height: 21rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -500,8 +500,8 @@ p {
 
 .hero-orbit {
   position: relative;
-  width: 14rem;
-  height: 14rem;
+  width: 13rem;
+  height: 13rem;
   margin: auto;
   border: 1px solid color-mix(in srgb, var(--mark) 50%, var(--line));
   border-radius: 50%;
@@ -1252,7 +1252,7 @@ p {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--space-5) var(--space-6);
-  padding-block: var(--space-6);
+  padding-block: var(--space-7) var(--space-5);
 }
 
 .footer-name {
@@ -1268,6 +1268,12 @@ p {
 
 .footer-role {
   margin-top: 0.25rem;
+}
+
+.footer-meta {
+  flex-basis: 100%;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--line);
 }
 
 .footer-links {
@@ -1299,7 +1305,7 @@ p {
 
 @media (min-width: 48rem) {
   .hero {
-    padding-block: var(--space-9) var(--space-8);
+    padding-block: clamp(4.5rem, 8vh, 6.5rem) var(--space-7);
   }
 
   .hero-grid {
@@ -1308,8 +1314,8 @@ p {
   }
 
   .hero-orbit {
-    width: 17rem;
-    height: 17rem;
+    width: 15rem;
+    height: 15rem;
   }
 
   .project-grid {

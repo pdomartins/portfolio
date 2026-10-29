@@ -426,9 +426,9 @@ const sptransProject: Project = {
   title: "SPTrans",
   descriptor: "Mobility service design and app redesign",
   image: {
-    src: "/images/sptrans/cover.jpg",
-    alt: "Bilhete Único mobility app redesign showing São Paulo's public transport network on a mobile map",
-    caption: "A digital wallet and journey planner designed for the everyday complexity of São Paulo mobility.",
+    src: "/images/sptrans/cover-final.png",
+    alt: "SPTrans mobility experience shown across multiple mobile screens for Bilhete Único and São Paulo public transport",
+    caption: "A connected mobility experience bringing fares, routes, transport information, and everyday journeys into one mobile system.",
   },
   gallery: [
     {
@@ -497,9 +497,9 @@ const daycovalProject: Project = {
   title: "Banco Daycoval",
   descriptor: "Banking app redesign",
   image: {
-    src: "/images/daycoval/page-10.png",
-    alt: "Banco Daycoval mobile banking app redesign shown on a tilted smartphone",
-    caption: "A more focused banking experience built around clarity, control, and everyday action.",
+    src: "/images/daycoval/cover-final.png",
+    alt: "Banco Daycoval mobile banking app shown on a tilted smartphone against a deep blue background",
+    caption: "A focused banking experience built around financial visibility, control, and everyday action.",
   },
   gallery: [
     {
@@ -566,8 +566,8 @@ const nexaProject: Project = {
   title: "Nexa Resources",
   descriptor: "Employee onboarding experience",
   image: {
-    src: "/images/nexa/page-18.png",
-    alt: "Nexa Resources employee onboarding experience across dashboards and candidate screens",
+    src: "/images/nexa/cover-final.png",
+    alt: "Nexa Resources employee onboarding experience shown across laptop screens and operational dashboards",
     caption: "A connected onboarding ecosystem for candidates, managers, and new employees.",
   },
   gallery: [
