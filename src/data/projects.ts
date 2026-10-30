@@ -162,6 +162,20 @@ const iungoAiSuite: Project = {
       ratio: "2818 / 1624",
     },
   ],
+  metrics: [
+    {
+      value: "7",
+      label: "digital products integrated into one ecosystem and design system",
+    },
+    {
+      value: "100%",
+      label: "visual consistency through shared guidelines across modules",
+    },
+    {
+      value: "360°",
+      label: "product vision connecting the experience end to end",
+    },
+  ],
   meta: {
     role: "Senior Product Designer, UX/UI and Design Systems",
     timeline: "2026",
