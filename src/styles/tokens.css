@@ -7,15 +7,15 @@
 :root,
 [data-theme="light"] {
   color-scheme: light;
-  --bg: #f4f1eb;
-  --bg-elevated: #fbf9f6;
+  --bg: #eef1e8;
+  --bg-elevated: #f7f9f2;
   --fg: #1b1916;
   --fg-muted: #4e4943;
-  --line: #ddd6cb;
+  --line: #d3dbcf;
   --mark: #1e4d3c;
-  --plate: #e7e1d6;
+  --plate: #e1e8dc;
   --focus: #1b1916;
-  --theme-color: #f4f1eb;
+  --theme-color: #eef1e8;
 }
 
 [data-theme="dark"] {

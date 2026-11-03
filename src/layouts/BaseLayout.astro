@@ -27,7 +27,7 @@ const imageUrl = Astro.site ? new URL(image, Astro.site).href : image;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f4f1eb" />
+    <meta name="theme-color" content="#EEF1E8" />
     <script is:inline>
       (function () {
         var theme = "light";
@@ -38,7 +38,7 @@ const imageUrl = Astro.site ? new URL(image, Astro.site).href : image;
         } catch (error) {}
         document.documentElement.setAttribute("data-theme", theme);
         var meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute("content", theme === "dark" ? "#121110" : "#f4f1eb");
+        if (meta) meta.setAttribute("content", theme === "dark" ? "#121110" : "#EEF1E8");
       })();
     </script>
     <title>{fullTitle}</title>
