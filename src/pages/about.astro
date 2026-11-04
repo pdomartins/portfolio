@@ -136,9 +136,9 @@ const description =
           {
             about.awards.map((award) => (
               <li>
-                <p class="award-when">{award.when}</p>
                 <h3>{award.name}</h3>
                 <p class="award-detail">{award.detail}</p>
+                <p class="award-when">{award.when}</p>
               </li>
             ))
           }
@@ -521,4 +521,9 @@ const description =
   @media (max-width: 47.99rem) {
     .about-intro p.about-perspective { margin-left: 0; }
   }
+
+  .award-list li { display: flex; flex-direction: column; gap: .55rem; padding: 1.5rem 0 2rem; }
+  .award-list h3 { order: 1; margin-top: 0; font-family: var(--font-serif); font-size: clamp(1.7rem, 2.5vw, 2.7rem); font-weight: 500; letter-spacing: -.035em; line-height: 1.05; }
+  .award-detail { order: 2; margin-top: 0; font-size: clamp(1rem, 1.25vw, 1.2rem); line-height: 1.4; }
+  .award-when { order: 3; margin-top: .7rem; font-family: var(--font-sans); font-size: .72rem; font-weight: 600; letter-spacing: .2em; line-height: 1; color: var(--fg-muted); text-transform: uppercase; }
 </style>
