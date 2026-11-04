@@ -476,4 +476,27 @@ const description =
       column-gap: var(--space-6);
     }
   }
+  /* Editorial CV-inspired layer */
+  .about-page { padding-bottom: clamp(4rem, 9vw, 9rem); }
+  .about-opening { isolation: isolate; padding-block: clamp(4.5rem, 10vw, 9rem) clamp(4rem, 8vw, 7rem); }
+  .about-opening::before { content: ""; position: absolute; inset: 1.5rem 0; z-index: -1; border: 1px solid color-mix(in srgb, var(--line) 72%, transparent); background-image: linear-gradient(color-mix(in srgb, var(--line) 22%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--line) 22%, transparent) 1px, transparent 1px); background-size: 2rem 2rem; opacity: .42; pointer-events: none; }
+  .about-opening .eyebrow { width: fit-content; padding: .55rem .8rem; border: 1px solid var(--fg-muted); background: var(--bg); font-size: .72rem; letter-spacing: .2em; }
+  .about-headline { max-width: 12ch; margin-top: 1.35rem; font-family: var(--font-sans); font-size: clamp(3.2rem, 8vw, 8rem); font-weight: 700; letter-spacing: -.075em; line-height: .88; text-transform: uppercase; }
+  .about-intro { max-width: 55rem; margin-top: clamp(2.5rem, 5vw, 5rem); gap: 1.5rem; }
+  .about-intro p { max-width: 42rem; font-size: clamp(1.45rem, 2.3vw, 2.25rem); line-height: 1.2; }
+  .about-intro p.about-perspective { max-width: 34rem; margin-left: clamp(0rem, 10vw, 9rem); font-size: clamp(1.05rem, 1.45vw, 1.35rem); line-height: 1.55; }
+  .about-section { padding-top: clamp(5rem, 11vw, 10rem); }
+  .about-section h2, .about-close h2 { font-size: clamp(2.3rem, 4vw, 4.3rem); }
+  .role-list { margin-top: clamp(2rem, 4vw, 4rem); padding-left: clamp(1rem, 4vw, 3.5rem); border-left: 1px solid var(--line); }
+  .role { position: relative; gap: 1.25rem; margin-top: 0; padding: 0 0 clamp(3rem, 6vw, 6rem); border: 0; border-radius: 0; background: transparent; }
+  .role + .role { padding-top: clamp(3rem, 6vw, 6rem); border-top: 1px solid color-mix(in srgb, var(--line) 72%, transparent); }
+  .role:hover { border-color: transparent; background: transparent; transform: none; }
+  .role::before { content: ""; position: absolute; left: calc(clamp(1rem, 4vw, 3.5rem) * -1 - .25rem); top: .55rem; width: .5rem; height: .5rem; border-radius: 50%; background: var(--mark); }
+  .role-dates { font-size: .72rem; letter-spacing: .2em; }
+  .role-company { margin-top: .65rem; font-size: .82rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+  .role-body h3 { font-family: var(--font-sans); font-size: clamp(1.75rem, 3vw, 3rem); font-weight: 700; letter-spacing: -.055em; line-height: .98; text-transform: uppercase; }
+  .role-points { gap: 1rem; margin-top: 1.6rem; }
+  .role-points li { max-width: 52rem; padding-left: 1.8rem; font-size: clamp(1.1rem, 1.4vw, 1.35rem); line-height: 1.5; color: var(--fg-muted); }
+  .role-points li::before { left: .1rem; top: .8em; width: .75rem; height: 2px; background: var(--mark); }
+  @media (min-width: 48rem) { .role { grid-template-columns: 11.5rem minmax(0, 1fr); column-gap: clamp(2rem, 6vw, 7rem); } }
 </style>
