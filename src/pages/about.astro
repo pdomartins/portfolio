@@ -499,4 +499,26 @@ const description =
   .role-points li { max-width: 52rem; padding-left: 1.8rem; font-size: clamp(1.1rem, 1.4vw, 1.35rem); line-height: 1.5; color: var(--fg-muted); }
   .role-points li::before { left: .1rem; top: .8em; width: .75rem; height: 2px; background: var(--mark); }
   @media (min-width: 48rem) { .role { grid-template-columns: 11.5rem minmax(0, 1fr); column-gap: clamp(2rem, 6vw, 7rem); } }
+
+  @media (min-width: 48rem) {
+    .about-intro {
+      max-width: none;
+      grid-template-columns: minmax(0, 1.15fr) minmax(15rem, .85fr);
+      column-gap: clamp(2.5rem, 8vw, 8rem);
+      align-items: start;
+    }
+
+    .about-intro p:not(.about-perspective) { grid-column: 1; }
+    .about-intro p.about-perspective {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      margin: .35rem 0 0;
+      padding-top: 1.25rem;
+      border-top: 2px solid var(--fg);
+    }
+  }
+
+  @media (max-width: 47.99rem) {
+    .about-intro p.about-perspective { margin-left: 0; }
+  }
 </style>
